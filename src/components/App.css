@@ -1,0 +1,74 @@
+.site-wrapper {
+  margin: 0 auto;
+  padding-top: 40px;
+}
+
+.center-children {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 1.5rem;
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom: 300px;
+}
+
+img {
+  width: 50%;
+  border-radius: 5px;
+  transition: all 0.25s ease-in-out;
+  margin-left: 25%;
+}
+
+.card {
+  margin: 1.5rem;
+  display: inline-block;
+  padding: 10px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  transition: all 0.25s ease-in-out;
+}
+
+.grid-container .card {
+  width: 200px;
+}
+
+.nominations-footer .card {
+  max-width: 150px;
+  flex: 1;
+}
+
+.delete-button {
+  margin-left: 5px;
+  padding-left: 5px;
+  font-size: 18px;
+  align-self: flex-end;
+  border-style: none;
+  background-color: #fff;
+}
+
+.nominate-button {
+  margin-top: 10px;
+  margin-left: 25%;
+}
+
+.nominations-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-direction: row;
+  background-color: #fff;
+  padding: 0 20px;
+}
