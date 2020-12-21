@@ -14,7 +14,7 @@ interface SearchItem {
   Poster: string;
 }
 
-interface Item {
+export interface Item {
   id: string;
   title: string;
   year: string;

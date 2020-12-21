@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import { useRecoilValue, useRecoilState } from 'recoil';
 
-import Search from './Search';
-import MovieList from './MovieList.js';
-import NominationsList from './NominationsList.js';
+import { Search } from './Search';
+import { Spinner } from './Spinner';
+import { MovieList } from './MovieList';
+import { NominationsList } from './NominationsList';
 import { getList } from '../utils/omdb';
 import { movieListState, searchState, loadingState } from '../recoil/atoms';
 
@@ -24,9 +25,9 @@ export default function App() {
     }
 
     getList(searchTerm)
-      .then((items: []) => {
+      .then((items) => {
         if (mounted) {
-          setList((list) => items);
+          setList(items);
         }
       })
       .finally(() => setLoading(false));
@@ -40,22 +41,14 @@ export default function App() {
     <div className="site-wrapper">
       <div>
         <div className="center-children">
-          <div>
-            <h1>The Shoppies</h1>
+          <div role="img" aria-label="title" className="title">
+            <img className="banner" alt="" src="/title.png" />
           </div>
           <div>
             <Search />
           </div>
         </div>
-        {searchTerm && loading && (
-          <div className="center-children">
-            <div>
-              {/* <div animation="border" variant="secondary" role="status">
-                <span>Loading...</span>
-              </div> */}
-            </div>
-          </div>
-        )}
+        {searchTerm && loading && <Spinner />}
         {list.length > 0 && <MovieList />}
       </div>
       <NominationsList />

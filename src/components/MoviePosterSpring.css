@@ -1,0 +1,14 @@
+.spring-card {
+  width: 25ch;
+  height: 39ch;
+  border-radius: 5px;
+  border-color: none;
+  box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 1s;
+  will-change: transform;
+  object-fit: cover;
+}
+
+.spring-card:hover {
+  box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.4);
+}

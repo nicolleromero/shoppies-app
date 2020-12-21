@@ -1,0 +1,6 @@
+.poster {
+  width: 50%;
+  border-radius: 5px;
+  transition: all 0.25s ease-in-out;
+  margin-left: 25%;
+}

@@ -4,7 +4,9 @@ import { movieListState } from '../recoil/atoms';
 
 import { Movie } from './Movie';
 
-export default function MovieList() {
+import './MovieList';
+
+export function MovieList() {
   const list = useRecoilValue(movieListState);
 
   return (

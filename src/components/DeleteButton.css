@@ -1,0 +1,8 @@
+.delete-button {
+  margin-left: 5px;
+  padding-left: 5px;
+  font-size: 18px;
+  align-self: flex-end;
+  border-style: none;
+  background-color: #fff;
+}

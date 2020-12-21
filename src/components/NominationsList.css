@@ -1,0 +1,33 @@
+.placeholder {
+  height: 123px;
+  width: 75px;
+  background: rgba(255, 255, 255, 0.68);
+  border-radius: 10px;
+  box-shadow: inset 0 0 4px rgb(102, 101, 101), 0 0 1px rgb(102, 101, 101);
+  padding: 10px;
+  display: inline-block;
+  margin: 15px;
+  vertical-align: top;
+  text-align: center;
+  margin: 1.5rem;
+  transition: all 0.25s ease-in-out;
+  /* background-image: url('../../public/statue_icon.png'); */
+}
+
+.nominations-footer .card {
+  max-width: 150px;
+  flex: 1;
+}
+
+.nominations-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-direction: row;
+  background-color: #fff;
+  padding: 0 20px;
+}

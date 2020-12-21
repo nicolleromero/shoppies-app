@@ -1,16 +1,18 @@
 import { atom } from 'recoil';
 
-const movieListState = atom({
+import { Item } from '../utils/omdb';
+
+const movieListState = atom<Item[]>({
   key: 'movieListState',
   default: [],
 });
 
-const nominationListState = atom({
+const nominationListState = atom<Item[]>({
   key: 'nominationListState',
   default: [],
 });
 
-const inputState = atom({
+const inputState = atom<string>({
   key: 'inputState',
   default: '',
 });
@@ -25,12 +27,12 @@ const optionsState = atom({
   default: [],
 });
 
-const searchState = atom({
+const searchState = atom<string>({
   key: 'searchState',
   default: '',
 });
 
-const loadingState = atom({
+const loadingState = atom<boolean>({
   key: 'loadingState',
   default: true,
 });

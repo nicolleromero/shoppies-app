@@ -1,0 +1,29 @@
+.embed-submit-field {
+  position: relative;
+}
+
+input {
+  width: 250px;
+  padding: 15px;
+}
+
+.button-submit {
+  position: absolute;
+  right: 8px;
+  top: 7px;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  border: none;
+  background: #ededed;
+  border-radius: 3px;
+  padding: 10px;
+  transition: all 0.2s;
+}
+
+.button-submit:hover {
+  background-color: #95bf46;
+  color: #fff;
+  cursor: pointer;
+}
