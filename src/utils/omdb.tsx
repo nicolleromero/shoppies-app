@@ -23,6 +23,10 @@ export interface Item {
 
 export const getList = memoize(
   async (term: string, page: number = 1): Promise<Item[]> => {
+    if (!term) {
+      return [];
+    }
+
     const url = new URL(SEARCH_URL);
     url.searchParams.append('apikey', API_KEY);
     url.searchParams.append('s', term);
