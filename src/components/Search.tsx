@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
-import { useRecoilState } from 'recoil';
+import { useSetRecoilState } from 'recoil';
 import { searchState } from '../recoil/atoms';
 
 import './Search.css';
 
 export function Search() {
-  const [search, setSearchTerm] = useRecoilState(searchState);
+  const setSearchTerm = useSetRecoilState(searchState);
   const [title, setTitle] = useState('');
 
   function handleSetSearchTerm(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    setSearchTerm(title);
+    setSearchTerm(title.trim().replace(/\s+/g, ' '));
   }
 
   return (
