@@ -1,9 +1,7 @@
 import React from 'react';
-import { useRecoilState } from 'recoil';
 import ReactTooltip from 'react-tooltip';
 
 import { nominationListState } from '../recoil/atoms';
-import { NominateButton } from './NominateButton';
 import { DeleteButton } from './DeleteButton';
 import { Poster } from './Poster';
 
@@ -16,26 +14,25 @@ type Props = {
 };
 
 export function NominatedMovie(props: Props) {
-  const [nominationsList, setNominationsList] = useRecoilState(nominationListState);
   const itemId = props.item.id;
-
-  function handleRemoveNomination() {
-    const updatedList = nominationsList.filter((item) => item.id !== itemId);
-    setNominationsList(updatedList);
-  }
 
   return (
     <div className="card">
-      <div>
-        <DeleteButton item={props.item} atom={nominationListState} />
-        <a data-tip data-for={itemId}>
-          <Poster item={props.item} />
-        </a>
-        <ReactTooltip id={itemId} aria-haspopup="true">
-          {props.item.title} ({props.item.year})
-        </ReactTooltip>
-        {/* <NominateButton text="Remove Nomination" onClick={handleRemoveNomination} /> */}
-      </div>
+      <a data-tip data-for={itemId}>
+        <Poster item={props.item}>
+          <DeleteButton item={props.item} atom={nominationListState} />
+        </Poster>
+      </a>
+      <ReactTooltip
+        className="tooltip"
+        id={itemId}
+        place="top"
+        type="dark"
+        effect="solid"
+        aria-haspopup="true"
+      >
+        {props.item.title} ({props.item.year})
+      </ReactTooltip>
     </div>
   );
 }

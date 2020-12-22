@@ -1,20 +1,19 @@
 .nominate-button {
-  margin-top: 10px;
-  margin-left: 25%;
+  align-items: center;
+  justify-content: center;
   height: 40px;
   width: 150px;
-  background: #008060;
-  background-image: linear-gradient(120deg, #8bca2f 0%, #008060 100%);
+  background-color: rgba(0, 0, 0, 0.75);
   color: #fff;
   font-weight: 18px;
   font-size: 18px;
-  border: none;
   border-radius: 3px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .nominate-button:disabled {
-  border: 1px solid #999999;
-  background: #cccccc;
-  color: #666666;
-  opacity: 90%;
+  /* border: 1px solid #999999;
+  background: #cccccc; */
+  opacity: 70%;
 }

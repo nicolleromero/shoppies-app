@@ -16,4 +16,13 @@
   border-width: 1px;
   border-radius: 5px;
   transition: all 0.25s ease-in-out;
+  position: relative;
+}
+
+.tooltip {
+  position: absolute !important;
+  left: -30px !important;
+  top: -45px !important;
+  opacity: 1 !important;
+  text-align: center !important;
 }

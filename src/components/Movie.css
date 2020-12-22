@@ -24,10 +24,8 @@
 
 .hidden-button {
   position: absolute;
-  z-index: 2;
-  top: 265px;
+  bottom: 10px;
   display: none;
-  left: 0px;
   color: gold;
 }
 

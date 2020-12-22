@@ -1,6 +1,5 @@
 .site-wrapper {
   margin: 0 auto;
-  padding-top: 40px;
   background-image: linear-gradient(-20deg, #fff 50%, rgb(219, 217, 217) 100%);
   /* background-image: linear-gradient(-20deg, #fbf7ee 0%, #f8f2e3 100%); */
   min-height: 535px;
@@ -33,105 +32,14 @@
 .title {
   text-align: center;
   margin-bottom: 20px;
+  color: #004c3f;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial,
+    sans-serif;
+  font-style: italic;
+  font-size: 62px;
 }
 
-.shimmer {
-  /* styling stuff */
-  font-family: cursive;
-  font-weight: 300;
-  font-size: 38px;
-  padding: 0 20px;
-  text-align: center;
-  color: rgba(255, 255, 255, 0.1);
-}
-.shimmer {
-  /* the shimmer magic */
-  background: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    from(#222),
-    to(#222),
-    color-stop(0.5, #fff)
-  );
-  background: -moz-gradient(
-    linear,
-    left top,
-    right top,
-    from(#222),
-    to(#222),
-    color-stop(0.5, #fff)
-  );
-  background: gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
-  -webkit-background-size: 125px 100%;
-  -moz-background-size: 125px 100%;
-  background-size: 125px 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  background-clip: text;
-  -webkit-animation-name: shimmer;
-  -moz-animation-name: shimmer;
-  -webkit-animation-name: shimmer;
-  animation-name: shimmer;
-  -webkit-animation-duration: 2s;
-  -moz-animation-duration: 2s;
-  -webkit-animation-duration: 2s;
-  animation-duration: 2s;
-  -webkit-animation-iteration-count: infinite;
-  -moz-animation-iteration-count: infinite;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  background-color: #222;
-}
-
-@-moz-keyframes shimmer {
-  0% {
-    background-position: top left;
-  }
-
-  100% {
-    background-position: top right;
-  }
-}
-
-@-webkit-keyframes shimmer {
-  0% {
-    background-position: top left;
-  }
-
-  100% {
-    background-position: top right;
-  }
-}
-
-@-o-keyframes shimmer {
-  0% {
-    background-position: top left;
-  }
-
-  100% {
-    background-position: top right;
-  }
-}
-
-@-ms-keyframes shimmer {
-  0% {
-    background-position: top left;
-  }
-
-  100% {
-    background-position: top right;
-  }
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: top left;
-  }
-
-  100% {
-    background-position: top right;
-  }
+.awards {
+  margin-top: 30px;
+  width: 18%;
 }
