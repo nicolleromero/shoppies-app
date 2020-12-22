@@ -1,4 +1,20 @@
 .nominate-button {
   margin-top: 10px;
   margin-left: 25%;
+  height: 40px;
+  width: 150px;
+  background: #008060;
+  background-image: linear-gradient(120deg, #8bca2f 0%, #008060 100%);
+  color: #fff;
+  font-weight: 18px;
+  font-size: 18px;
+  border: none;
+  border-radius: 3px;
+}
+
+.nominate-button:disabled {
+  border: 1px solid #999999;
+  background: #cccccc;
+  color: #666666;
+  opacity: 90%;
 }

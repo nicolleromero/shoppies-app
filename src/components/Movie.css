@@ -4,10 +4,11 @@
   display: inline-block;
   padding: 10px;
   border-style: solid;
-  border-color: #fff;
+  border-color: transparent;
   border-width: 1px;
   border-radius: 5px;
   transition: all 0.25s ease-in-out;
+  position: relative;
 }
 .nominated-poster {
   width: 50%;
@@ -17,5 +18,19 @@
 }
 
 .movie-title {
-  margin: 10px;
+  margin: 22px;
+  width: 160px;
+}
+
+.hidden-button {
+  position: absolute;
+  z-index: 2;
+  top: 265px;
+  display: none;
+  left: 0px;
+  color: gold;
+}
+
+.card:hover .hidden-button {
+  display: block;
 }

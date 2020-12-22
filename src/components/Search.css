@@ -5,6 +5,13 @@
 input {
   width: 250px;
   padding: 15px;
+  background: #fff;
+  border-width: 1px;
+  border-color: lightgrey;
+  border-radius: 5px;
+  font-family: Helvetica, sans-serif;
+  font-size: 18px;
+  color: #6b7177;
 }
 
 .button-submit {
@@ -16,14 +23,15 @@ input {
   -moz-appearance: none;
 
   border: none;
-  background: #ededed;
+  background: #008060;
+  color: #fff;
   border-radius: 3px;
   padding: 10px;
   transition: all 0.2s;
 }
 
 .button-submit:hover {
-  background-color: #95bf46;
+  background: #8bca2f;
   color: #fff;
   cursor: pointer;
 }

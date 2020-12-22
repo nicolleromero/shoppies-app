@@ -41,6 +41,7 @@ export default function App() {
     <div className="site-wrapper">
       <div>
         <div className="center-children">
+          <span className="shimmer">Presenting...</span>
           <div role="img" aria-label="title" className="title">
             <img className="banner" alt="" src="/title.png" />
           </div>

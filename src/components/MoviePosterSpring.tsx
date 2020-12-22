@@ -29,7 +29,7 @@ export function MoviePosterSpring(props: Props) {
   return (
     <animated.img
       className="spring-card"
-      src={props.item.image}
+      src={props.item.image !== 'N/A' ? props.item.image : '/movie_poster.png'}
       onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
       onMouseLeave={() => set({ xys: [0, 0, 1] })}
       style={{ transform: springProps.xys.interpolate(trans as any) }}

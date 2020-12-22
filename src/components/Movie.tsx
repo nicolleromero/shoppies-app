@@ -18,7 +18,8 @@ export function Movie(props: Props) {
   const [movieList, setMovieList] = useRecoilState(movieListState);
   const [nominationsList, setNominationsList] = useRecoilState(nominationListState);
   const itemId = props.item.id;
-  const nominated = nominationsList.some((obj) => obj.id === itemId);
+  const nominated =
+    nominationsList.some((obj) => obj.id === itemId) || nominationsList.length === 5;
 
   function handleNominate() {
     const updatedNominationsList = [...nominationsList, props.item];
@@ -31,9 +32,11 @@ export function Movie(props: Props) {
       {/* <Poster item={props.item} /> */}
       <MoviePosterSpring item={props.item} />
       <div className="movie-title">
-        Title: {props.item.title} Year: {props.item.year}
+        {props.item.title} ({props.item.year})
       </div>
-      <NominateButton text="Nominate!" disabled={nominated} onClick={handleNominate} />
+      <div className="hidden-button">
+        <NominateButton text="✨Nominate!✨" disabled={nominated} onClick={handleNominate} />
+      </div>
     </div>
   );
 }
