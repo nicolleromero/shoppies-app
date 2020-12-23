@@ -6,7 +6,7 @@ import { NominationsList } from './NominationsList';
 import { CallToActionBar } from './CallToActionBar';
 import { SuccessBar } from './SuccessBar';
 
-import './NominationsList.css';
+import './Footer.css';
 
 export function Footer() {
   const list = useRecoilValue(nominationListState);
@@ -14,8 +14,17 @@ export function Footer() {
   if (!list.length) {
     return <CallToActionBar />;
   } else if (list.length >= 5) {
-    return <SuccessBar />;
+    return (
+      <div className="footer">
+        <SuccessBar />
+        <NominationsList />
+      </div>
+    );
   } else {
-    return <NominationsList />;
+    return (
+      <div className="footer">
+        <NominationsList />
+      </div>
+    );
   }
 }

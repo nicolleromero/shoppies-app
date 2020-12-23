@@ -8,12 +8,10 @@
   font-weight: 18px;
   font-size: 18px;
   border-radius: 3px;
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .nominate-button:disabled {
-  /* border: 1px solid #999999;
-  background: #cccccc; */
   opacity: 70%;
 }

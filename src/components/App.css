@@ -1,7 +1,6 @@
 .site-wrapper {
   margin: 0 auto;
-  background-image: linear-gradient(-20deg, #fff 50%, rgb(219, 217, 217) 100%);
-  /* background-image: linear-gradient(-20deg, #fbf7ee 0%, #f8f2e3 100%); */
+  background-image: linear-gradient(-20deg, #fff 40%, rgb(211, 210, 210) 100%);
   min-height: 535px;
 }
 

@@ -1,5 +1,3 @@
-import React from 'react';
-
 import './NominateButton.css';
 
 type Props = {

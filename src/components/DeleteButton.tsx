@@ -1,4 +1,3 @@
-import React from 'react';
 import { useRecoilState, RecoilState } from 'recoil';
 
 import { Item } from '../utils/omdb';

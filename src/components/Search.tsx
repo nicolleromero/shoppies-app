@@ -12,6 +12,7 @@ export function Search() {
     event.preventDefault();
 
     setSearchTerm(title.trim().replace(/\s+/g, ' '));
+    setTitle('');
   }
 
   return (

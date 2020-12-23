@@ -2,7 +2,6 @@ import React, { useRef } from 'react';
 import { useSpring, animated } from 'react-spring';
 
 import { movieListState } from '../recoil/atoms';
-
 import { Item } from '../utils/omdb';
 import { DeleteButton } from './DeleteButton';
 

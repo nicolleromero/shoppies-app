@@ -10,8 +10,6 @@
   text-align: center;
   margin: 1.5rem;
   transition: all 0.25s ease-in-out;
-  /* background-image: url('statue_icon.png');
-  background-size: contain; */
 }
 
 .nominations-footer .card {
@@ -23,17 +21,10 @@
 }
 
 .nominations-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 2;
   min-height: 191px;
   display: flex;
   justify-content: center;
   align-items: stretch;
   flex-direction: row;
   padding: 0 20px;
-  background-image: linear-gradient(-20deg, rgb(207, 204, 204) 50%, rgb(22, 22, 22) 100%);
-  opacity: 85%;
 }

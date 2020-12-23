@@ -4,7 +4,6 @@ import { useRecoilState } from 'recoil';
 import { nominationListState } from '../recoil/atoms';
 import { Item } from '../utils/omdb';
 import { NominateButton } from './NominateButton';
-import { Poster } from './Poster';
 import { MoviePosterSpring } from './MoviePosterSpring';
 
 import './Movie.css';
@@ -26,7 +25,6 @@ export function Movie(props: Props) {
 
   return (
     <div className="card">
-      {/* <Poster item={props.item} /> */}
       <MoviePosterSpring item={props.item}>
         <div className="hidden-button">
           <NominateButton text="✨Nominate!✨" disabled={nominated} onClick={handleNominate} />
