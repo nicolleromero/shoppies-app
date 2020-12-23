@@ -1,3 +1,8 @@
-.grid-container .card {
-  width: 200px;
+.no-results-message {
+  text-align: center;
+  align-self: center;
+  width: 400px;
+  font-family: Helvetica, sans-serif;
+  font-size: 18px;
+  color: #6b7177;
 }

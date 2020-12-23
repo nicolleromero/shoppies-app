@@ -24,7 +24,7 @@ export function Movie(props: Props) {
   }
 
   return (
-    <div className="card">
+    <div className="card" role="listitem">
       <MoviePosterSpring item={props.item}>
         <div className="hidden-button">
           <NominateButton text="✨Nominate!✨" disabled={nominated} onClick={handleNominate} />
