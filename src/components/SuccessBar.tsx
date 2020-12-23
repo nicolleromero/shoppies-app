@@ -8,7 +8,7 @@ export function SuccessBar() {
 
   return (
     <div className="success-bar">
-      <img className="statue" src="../statue.png" alt="" />
+      {/* <img className="statue" src="../statue.png" alt="" /> */}
       <p className="success-text">
         Congratulations! You've completed your nominations!<span className="star">💫</span>
       </p>
