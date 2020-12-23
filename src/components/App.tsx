@@ -3,7 +3,7 @@ import React, { Suspense } from 'react';
 import { Search } from './Search';
 import { Spinner } from './Spinner';
 import { MovieList } from './MovieList';
-import { NominationsList } from './NominationsList';
+import { Footer } from './Footer';
 
 import './App.css';
 
@@ -24,7 +24,7 @@ export default function App() {
           <MovieList />
         </Suspense>
       </div>
-      <NominationsList />
+      <Footer />
     </div>
   );
 }

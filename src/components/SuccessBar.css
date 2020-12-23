@@ -1,10 +1,10 @@
-.call-to-action-bar {
+.success-bar {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   z-index: 2;
-  height: 90px;
+  height: 400px;
   display: flex;
   justify-content: center;
   align-items: stretch;
@@ -16,8 +16,8 @@
   font-size: 20px;
 }
 
-.text {
-  padding-top: 18px;
+.success-text {
+  height: 30px;
 }
 
 .number {
@@ -31,4 +31,14 @@
   width: 40px;
   height: 98px;
   opacity: 0.8;
+}
+
+.star {
+  font-size: 60px;
+}
+
+.reset-button {
+  border: none;
+  background: none;
+  height: 30px;
 }
