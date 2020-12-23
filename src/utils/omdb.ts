@@ -1,7 +1,7 @@
 import { memoize } from './memoize';
 
 const API_KEY = '7030d0e8';
-const SEARCH_URL = 'http://www.omdbapi.com';
+const SEARCH_URL = 'https://www.omdbapi.com';
 
 interface SearchData {
   Search: SearchItem[];
@@ -62,10 +62,11 @@ export const getList = memoize(
 //   async (term: string): Promise<Item[]> => {
 //     const url = new URL(SEARCH_URL);
 //     url.searchParams.append('apikey', API_KEY);
-//     url.searchParams.append('s', term);
+//     url.searchParams.append('i', term);
 //     url.searchParams.append('type', 'movie');
+//     url.searchParams.append('plot', 'full');
 
-//     const response = await fetch(url);
+//     const response = await fetch(url.toString());
 
 //     if (!response.ok) {
 //       const message = `An error has occured: ${response.status}`;
