@@ -1,10 +1,10 @@
 import React from 'react';
 import { useRecoilState } from 'recoil';
 
-import { nominationListState } from '../recoil/atoms';
+import { movieListState, nominationListState } from '../recoil/atoms';
 import { Item } from '../utils/omdb';
 import { NominateButton } from './NominateButton';
-import { MoviePosterSpring } from './MoviePosterSpring';
+import { Poster } from './Poster';
 
 import './Movie.css';
 
@@ -13,6 +13,7 @@ type Props = {
 };
 
 export function Movie(props: Props) {
+  const [movieList, setMovieList] = useRecoilState(movieListState);
   const [nominationsList, setNominationsList] = useRecoilState(nominationListState);
   const itemId = props.item.id;
   const nominated =
@@ -21,15 +22,26 @@ export function Movie(props: Props) {
   function handleNominate() {
     const updatedNominationsList = [...nominationsList, props.item];
     setNominationsList(updatedNominationsList);
+
+    handleDeleteMovie();
+  }
+
+  function handleDeleteMovie() {
+    const updatedList = movieList.filter((item) => item.id !== itemId);
+    setMovieList(updatedList);
   }
 
   return (
     <div className="card" role="listitem" data-testid={props.item.title}>
-      <MoviePosterSpring item={props.item}>
+      <Poster item={props.item}>
         <div className="hidden-button">
-          <NominateButton text="✨Nominate!✨" disabled={nominated} onClick={handleNominate} />
+          <NominateButton
+            text={nominated ? '✨Nominated✨' : '✨Nominate!✨'}
+            disabled={nominated}
+            onClick={handleNominate}
+          />
         </div>
-      </MoviePosterSpring>
+      </Poster>
       <div className="movie-title">
         {props.item.title} ({props.item.year})
       </div>
