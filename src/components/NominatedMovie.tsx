@@ -17,7 +17,7 @@ export function NominatedMovie(props: Props) {
   const itemId = props.item.id;
 
   return (
-    <div className="card">
+    <div className="card" data-testid={itemId}>
       <a data-tip data-for={itemId}>
         <Poster item={props.item}>
           <DeleteButton item={props.item} atom={nominationListState} />

@@ -1,6 +1,6 @@
 import React from 'react';
 import { RecoilRoot } from 'recoil';
-import { render, screen } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import userEvent from '@testing-library/user-event';
 
@@ -29,6 +29,21 @@ test('submit search and return movie list', async () => {
   userEvent.click(screen.getByText(/send/i));
   await sleep(3000);
   const movieCards = screen.getAllByText(/star\s+wars/i);
-  console.warn(movieCards.map((el) => el.textContent));
+  // console.warn(movieCards.map((el) => el.textContent));
   expect(movieCards.length).toEqual(10);
+});
+
+// testing nominate movie
+test('submit movie nomination', async () => {
+  render(<App />, { wrapper: RecoilRoot });
+  userEvent.type(screen.getByRole('textbox'), '');
+  userEvent.click(screen.getByText(/send/i));
+  await sleep(3000);
+  // const movieCards = screen.getAllByText(/star\s+wars/i);
+  userEvent.hover(screen.getByTestId('Star Wars: Episode IV - A New Hope'));
+  const nominateButtons = screen.getAllByText(/nominate!/i);
+  userEvent.click(nominateButtons[0]);
+  const nominatedMovie = screen.getAllByTestId(/tt+/i);
+  expect(nominatedMovie.length).toBeGreaterThanOrEqual(1);
+  // await act(() => sleep);
 });
