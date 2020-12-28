@@ -17,12 +17,10 @@ export function NominatedMovie(props: Props) {
   const itemId = props.item.id;
 
   return (
-    <div className="card" data-testid={itemId}>
-      <a data-tip data-for={itemId}>
-        <Poster item={props.item}>
-          <DeleteButton item={props.item} atom={nominationListState} />
-        </Poster>
-      </a>
+    <div className="nominated-movie" data-testid={itemId}>
+      <Poster data-tip data-for={itemId} item={props.item}>
+        <DeleteButton item={props.item} atom={nominationListState} />
+      </Poster>
       <ReactTooltip
         className="tooltip"
         id={itemId}

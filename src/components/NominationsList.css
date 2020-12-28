@@ -12,14 +12,6 @@
   transition: all 0.25s ease-in-out;
 }
 
-.nominations-footer .card {
-  max-width: 150px;
-  flex: 1;
-  margin-left: 0;
-  margin-right: 0;
-  opacity: 100%;
-}
-
 .nominations-footer {
   min-height: 191px;
   display: flex;

@@ -1,14 +1,11 @@
 import React, { useRef } from 'react';
 import { useSpring, animated } from 'react-spring';
 
-import { movieListState } from '../recoil/atoms';
 import { Item } from '../utils/omdb';
-import { DeleteButton } from './DeleteButton';
 
 import './Poster.css';
 
-type Props = {
-  children?: React.ReactNode;
+type Props = React.HTMLAttributes<HTMLDivElement> & {
   item: Item;
 };
 
@@ -17,7 +14,7 @@ type XYS = readonly [number, number, number];
 const trans = (x: number, y: number, s: number) =>
   `perspective(1000px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
 
-export function Poster(props: Props) {
+export function Poster({ item, ...props }: Props) {
   const elementRef = useRef<HTMLDivElement>(null);
 
   const [springProps, set] = useSpring<{ xys: XYS }>(() => ({
@@ -40,17 +37,17 @@ export function Poster(props: Props) {
 
   return (
     <animated.div
+      {...props}
       className="poster"
       onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
       onMouseLeave={() => set({ xys: [0, 0, 1] })}
       ref={elementRef}
       style={{ transform: springProps.xys.interpolate(trans as any) }}
     >
-      <DeleteButton item={props.item} atom={movieListState} />
       <img
         className="poster"
         alt=""
-        src={props.item.image !== 'N/A' ? props.item.image : '/movie_poster.png'}
+        src={item.image !== 'N/A' ? item.image : '/movie_poster.png'}
       />
       {props.children}
     </animated.div>

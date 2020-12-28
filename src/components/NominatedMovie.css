@@ -1,21 +1,5 @@
-.nominated-poster {
-  height: 150px;
-  width: auto;
-  border-radius: 10px;
-  border-radius: 5px;
-  transition: all 0.25s ease-in-out;
-  margin-left: 25%;
-  opacity: 100%;
-}
-
-.card {
+.nominated-movie {
   margin: 1.5rem;
-  display: inline-block;
-  padding: 10px;
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 5px;
-  transition: all 0.25s ease-in-out;
   position: relative;
 }
 
