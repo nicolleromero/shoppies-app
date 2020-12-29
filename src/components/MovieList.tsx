@@ -1,6 +1,7 @@
 import React from 'react';
 import { useRecoilValue } from 'recoil';
 
+import { searchState } from '../recoil/atoms';
 import { filteredSearchQuery } from '../recoil/selectors';
 import { Movie } from './Movie';
 
@@ -8,6 +9,11 @@ import './MovieList.css';
 
 export function MovieList() {
   const results = useRecoilValue(filteredSearchQuery(1));
+  const searchTerm = useRecoilValue(searchState);
+
+  if (!searchTerm && !results.length) {
+    return null;
+  }
 
   return (
     <div className="grid-container" role="list">

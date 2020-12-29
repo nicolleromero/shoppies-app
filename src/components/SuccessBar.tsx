@@ -8,18 +8,18 @@ export function SuccessBar() {
   const setNominationList = useSetRecoilState(nominationListState);
 
   function handleReset() {
+    // Reset all hidden movies and nominations.
     setHiddenList([]);
     setNominationList([]);
   }
 
   return (
     <div className="success-bar">
-      {/* <img className="statue" src="../statue.png" alt="" /> */}
       <p className="success-text">
         Congratulations! You've completed your nominations!<span className="star">💫</span>
       </p>
       <button className="reset-button" onClick={handleReset}>
-        (Start Over)
+        RESET
       </button>
     </div>
   );

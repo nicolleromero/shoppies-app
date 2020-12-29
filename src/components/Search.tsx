@@ -18,18 +18,16 @@ export function Search() {
   }
 
   return (
-    <form onSubmit={handleSetSearchTerm}>
-      <div className="embed-submit-field">
-        <input
-          type="text"
-          placeholder="Enter the title of a movie"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
-        <button className="button-submit" type="submit" disabled={!title.trim()}>
-          Send
-        </button>
-      </div>
+    <form className="search-field" onSubmit={handleSetSearchTerm}>
+      <input
+        type="text"
+        placeholder="Enter the title of a movie"
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+      />
+      <button className="button-submit" type="submit" disabled={!title.trim()}>
+        SEARCH
+      </button>
     </form>
   );
 }

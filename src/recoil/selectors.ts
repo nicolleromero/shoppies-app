@@ -11,6 +11,7 @@ export const omdbSearchQuery = selectorFamily({
 export const filteredSearchQuery = selectorFamily({
   key: 'filteredSearchQuery',
   get: (page: number) => ({ get }) => {
+    // waitForAll used to track multiple dependences in recoil
     const [list, hiddenList] = get(waitForAll([omdbSearchQuery(page), hiddenListState]));
 
     return list.filter((item) => !hiddenList.includes(item.id));

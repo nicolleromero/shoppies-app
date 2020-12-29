@@ -4,8 +4,9 @@ import { useRecoilValue } from 'recoil';
 
 import { MAX_NOMINATIONS } from '../constants';
 import { nominationListState } from '../recoil/atoms';
-import { NominationsList } from './NominationsList';
+
 import { CallToActionBar } from './CallToActionBar';
+import { NominationsList } from './NominationsList';
 import { SuccessBar } from './SuccessBar';
 
 import './Footer.css';

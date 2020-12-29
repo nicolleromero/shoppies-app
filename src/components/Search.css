@@ -1,8 +1,8 @@
-.embed-submit-field {
+.search-field {
   position: relative;
 }
 
-input {
+.search-field input {
   min-width: 310px;
   padding: 15px;
   background: #fff;
@@ -18,10 +18,6 @@ input {
   position: absolute;
   right: 8px;
   top: 9px;
-
-  -webkit-appearance: none;
-  -moz-appearance: none;
-
   border: none;
   background: #008060;
   color: #fff;

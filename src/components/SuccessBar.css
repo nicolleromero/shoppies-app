@@ -31,7 +31,18 @@
 }
 
 .reset-button {
+  height: 35px;
+  margin: 30px;
   border: none;
-  background: none;
-  height: 30px;
+  background: #008060;
+  color: #fff;
+  border-radius: 3px;
+  padding: 10px;
+  transition: all 0.2s;
+}
+
+.reset-button:hover {
+  background: #8bca2f;
+  color: #fff;
+  cursor: pointer;
 }

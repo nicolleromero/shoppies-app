@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react';
-import { useSetRecoilState } from 'recoil';
 import ReactTooltip from 'react-tooltip';
+import { useSetRecoilState } from 'recoil';
 
 import { hiddenListState, nominationListState } from '../recoil/atoms';
+import { Item } from '../utils/omdb';
 import { DeleteButton } from './DeleteButton';
 import { Poster } from './Poster';
-
-import { Item } from '../utils/omdb';
 
 import './NominatedMovie.css';
 

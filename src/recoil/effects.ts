@@ -7,6 +7,7 @@ export const localStorageEffect = <T>(key: string): AtomEffect<T> => ({ setSelf,
   }
 
   onSet((newValue) => {
+    // DefaultValue is used by Recoil when state is reset.
     if (newValue instanceof DefaultValue) {
       localStorage.removeItem(key);
     } else {

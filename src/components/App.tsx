@@ -1,5 +1,7 @@
 import React, { Suspense } from 'react';
+import { useRecoilValue } from 'recoil';
 
+import { searchState } from '../recoil/atoms';
 import { FlipRoot } from './FlipRoot';
 import { Footer } from './Footer';
 import { MovieList } from './MovieList';
@@ -9,15 +11,20 @@ import { Spinner } from './Spinner';
 import './App.css';
 
 export default function App() {
+  const searchTerm = useRecoilValue(searchState);
+
   return (
     <FlipRoot className="site-wrapper">
       <div>
-        <div className="center-children">
-          <div role="img" aria-label="title" className="title">
-            <img className="awards" alt="" src="/awards.svg" />
-            <h1 className="title">the shoppies</h1>
-          </div>
-          <div>
+        <div className={searchTerm ? 'center-children-shift' : 'center-children'}>
+          <img
+            className={searchTerm ? 'awards-shift' : 'awards'}
+            alt=""
+            src="/awards.svg"
+            aria-label="awards-scene"
+          />
+          <h2 className={searchTerm ? 'title-shift' : 'title'}>the shoppies</h2>
+          <div className={searchTerm ? 'input-shift' : ''}>
             <Search />
           </div>
         </div>
@@ -25,7 +32,6 @@ export default function App() {
           <MovieList />
         </Suspense>
       </div>
-
       <Footer />
     </FlipRoot>
   );

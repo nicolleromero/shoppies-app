@@ -2,11 +2,3 @@
   margin: 1.5rem;
   position: relative;
 }
-
-.tooltip {
-  position: absolute !important;
-  /* left: -30px !important;
-  top: -45px !important; */
-  opacity: 1 !important;
-  text-align: center !important;
-}

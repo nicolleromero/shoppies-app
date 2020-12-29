@@ -1,8 +1,8 @@
 import React from 'react';
 import { useRecoilValue } from 'recoil';
 
-import { nominationListState } from '../recoil/atoms';
 import { MAX_NOMINATIONS } from '../constants';
+import { nominationListState } from '../recoil/atoms';
 import { NominatedMovie } from './NominatedMovie';
 
 import './NominationsList.css';
