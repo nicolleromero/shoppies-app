@@ -1,24 +1,18 @@
-import React, { useLayoutEffect } from 'react';
-import { useRecoilState, useRecoilValue } from 'recoil';
+import React from 'react';
+import { useRecoilValue } from 'recoil';
 
-import { movieListState } from '../recoil/atoms';
-import { omdbSearchQuery } from '../recoil/selectors';
+import { filteredSearchQuery } from '../recoil/selectors';
 import { Movie } from './Movie';
 
 import './MovieList.css';
 
 export function MovieList() {
-  const results = useRecoilValue(omdbSearchQuery(1));
-  const [list, setList] = useRecoilState(movieListState);
-
-  useLayoutEffect(() => {
-    setList(results);
-  }, [results, setList]);
+  const results = useRecoilValue(filteredSearchQuery(1));
 
   return (
     <div className="grid-container" role="list">
-      {list.length ? (
-        list.map((item) => {
+      {results.length ? (
+        results.map((item) => {
           return <Movie item={item} key={item.id} />;
         })
       ) : (

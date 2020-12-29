@@ -1,7 +1,8 @@
 import React from 'react';
+import { useSetRecoilState } from 'recoil';
 import ReactTooltip from 'react-tooltip';
 
-import { nominationListState } from '../recoil/atoms';
+import { hiddenListState, nominationListState } from '../recoil/atoms';
 import { DeleteButton } from './DeleteButton';
 import { Poster } from './Poster';
 
@@ -14,12 +15,19 @@ type Props = {
 };
 
 export function NominatedMovie(props: Props) {
+  const setHiddenList = useSetRecoilState(hiddenListState);
+  const setNominationList = useSetRecoilState(nominationListState);
   const itemId = props.item.id;
+
+  function handleUnnominateMovie() {
+    setHiddenList((hiddenList) => hiddenList.filter((id) => id !== itemId));
+    setNominationList((nominationList) => nominationList.filter((item) => item.id !== itemId));
+  }
 
   return (
     <div className="nominated-movie" data-testid={itemId}>
       <Poster data-tip data-for={itemId} item={props.item}>
-        <DeleteButton item={props.item} atom={nominationListState} />
+        <DeleteButton item={props.item} onClick={handleUnnominateMovie} />
       </Poster>
       <ReactTooltip
         className="tooltip"

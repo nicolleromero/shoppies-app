@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import { useRecoilState } from 'recoil';
-import { searchState } from '../recoil/atoms';
+import { useRecoilState, useSetRecoilState } from 'recoil';
+
+import { hiddenListState, searchState } from '../recoil/atoms';
 
 import './Search.css';
 
 export function Search() {
+  const setHiddenList = useSetRecoilState(hiddenListState);
   const [searchTerm, setSearchTerm] = useRecoilState(searchState);
   const [title, setTitle] = useState(searchTerm);
 
@@ -12,6 +14,7 @@ export function Search() {
     event.preventDefault();
 
     setSearchTerm(title.trim().replace(/\s+/g, ' '));
+    setHiddenList([]);
   }
 
   return (

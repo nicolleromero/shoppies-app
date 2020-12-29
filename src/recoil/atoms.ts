@@ -8,9 +8,10 @@ export const inputState = atom<string>({
   default: '',
 });
 
-export const movieListState = atom<Item[]>({
-  key: 'movieListState',
+export const hiddenListState = atom<string[]>({
+  key: 'hiddenListState',
   default: [],
+  effects_UNSTABLE: [localStorageEffect('hiddenListState')],
 });
 
 export const nominationListState = atom<Item[]>({

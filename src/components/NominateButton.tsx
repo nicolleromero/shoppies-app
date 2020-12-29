@@ -1,7 +1,7 @@
-import { useRecoilState } from 'recoil';
+import { useRecoilState, useSetRecoilState } from 'recoil';
 
 import { MAX_NOMINATIONS } from '../constants';
-import { nominationListState } from '../recoil/atoms';
+import { hiddenListState, nominationListState } from '../recoil/atoms';
 import { Item } from '../utils/omdb';
 
 import './NominateButton.css';
@@ -12,12 +12,13 @@ type Props = {
 
 export function NominateButton(props: Props) {
   const [nominationsList, setNominationsList] = useRecoilState(nominationListState);
+  const setHiddenList = useSetRecoilState(hiddenListState);
   const itemId = props.item.id;
   const nominated = nominationsList.some((obj) => obj.id === itemId);
 
   function handleNominate() {
-    const updatedNominationsList = [...nominationsList, props.item];
-    setNominationsList(updatedNominationsList);
+    setNominationsList((nominationsList) => [...nominationsList, props.item]);
+    setHiddenList((hiddenList) => [...hiddenList, itemId]);
   }
 
   if (!nominated && nominationsList.length === MAX_NOMINATIONS) {
