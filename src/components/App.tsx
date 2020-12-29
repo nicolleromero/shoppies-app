@@ -1,15 +1,16 @@
 import React, { Suspense } from 'react';
 
+import { FlipRoot } from './FlipRoot';
+import { Footer } from './Footer';
+import { MovieList } from './MovieList';
 import { Search } from './Search';
 import { Spinner } from './Spinner';
-import { MovieList } from './MovieList';
-import { Footer } from './Footer';
 
 import './App.css';
 
 export default function App() {
   return (
-    <div className="site-wrapper">
+    <FlipRoot className="site-wrapper">
       <div>
         <div className="center-children">
           <div role="img" aria-label="title" className="title">
@@ -25,6 +26,6 @@ export default function App() {
         </Suspense>
       </div>
       <Footer />
-    </div>
+    </FlipRoot>
   );
 }

@@ -1,10 +1,16 @@
 import { useSetRecoilState } from 'recoil';
-import { nominationListState } from '../recoil/atoms';
+import { hiddenListState, nominationListState } from '../recoil/atoms';
 
 import './SuccessBar.css';
 
 export function SuccessBar() {
-  const setList = useSetRecoilState(nominationListState);
+  const setHiddenList = useSetRecoilState(hiddenListState);
+  const setNominationList = useSetRecoilState(nominationListState);
+
+  function handleReset() {
+    setHiddenList([]);
+    setNominationList([]);
+  }
 
   return (
     <div className="success-bar">
@@ -12,7 +18,7 @@ export function SuccessBar() {
       <p className="success-text">
         Congratulations! You've completed your nominations!<span className="star">💫</span>
       </p>
-      <button className="reset-button" onClick={() => setList([])}>
+      <button className="reset-button" onClick={handleReset}>
         (Start Over)
       </button>
     </div>
