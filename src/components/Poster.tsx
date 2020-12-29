@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { Flipped } from 'react-flip-toolkit';
 import { useSpring, animated } from 'react-spring';
 

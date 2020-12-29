@@ -5,8 +5,8 @@
 
 .tooltip {
   position: absolute !important;
-  left: -30px !important;
-  top: -45px !important;
+  /* left: -30px !important;
+  top: -45px !important; */
   opacity: 1 !important;
   text-align: center !important;
 }

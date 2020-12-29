@@ -25,6 +25,7 @@ export default function App() {
           <MovieList />
         </Suspense>
       </div>
+
       <Footer />
     </FlipRoot>
   );

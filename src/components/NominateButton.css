@@ -12,13 +12,15 @@
   border: 1px solid rgba(255, 255, 255, 0.5);
   position: absolute;
   bottom: 10px;
-  display: none;
+  display: flex;
+  opacity: 0;
+  transition: opacity 0.25s ease-in-out;
 }
 
 .movie:hover .nominate-button {
-  display: flex;
+  opacity: 1;
 }
 
 .nominate-button:disabled {
-  opacity: 70%;
+  opacity: 0.75;
 }
