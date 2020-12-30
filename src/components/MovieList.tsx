@@ -10,7 +10,7 @@ export function MovieList() {
 
   return (
     <div className="grid-container" role="list">
-      <MoviePage page={1} query={query} />;
+      <MoviePage page={1} query={query} />
     </div>
   );
 }

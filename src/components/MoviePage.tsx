@@ -25,7 +25,7 @@ export function MoviePage(props: Props) {
           return <MovieCard movie={movie} key={movie.id} />;
         })
       ) : props.page === 1 ? (
-        <p className="no-results-message">
+        <p className="no-results-message" role="listitem">
           We weren't able to find any movies that match that title. Please modify your search and
           try again.
         </p>

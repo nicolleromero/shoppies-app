@@ -13,6 +13,7 @@ export function Search() {
   const [value, setValue] = useState(searchTerm);
   let history = useHistory();
 
+  // Change input value to match search term when browser navigation occurs
   useLayoutEffect(() => {
     setValue(searchTerm);
   }, [searchTerm]);
