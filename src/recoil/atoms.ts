@@ -1,6 +1,6 @@
 import { atom } from 'recoil';
 
-import { Item } from '../utils/omdb';
+import { Movie } from '../utils/omdb';
 import { localStorageEffect } from './effects';
 
 export const inputState = atom<string>({
@@ -14,7 +14,7 @@ export const hiddenListState = atom<string[]>({
   effects_UNSTABLE: [localStorageEffect('hiddenListState')],
 });
 
-export const nominationListState = atom<Item[]>({
+export const nominationListState = atom<Movie[]>({
   key: 'nominationListState',
   default: [],
   effects_UNSTABLE: [localStorageEffect('nominationListState')],

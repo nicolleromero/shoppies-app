@@ -1,19 +1,24 @@
 import { selectorFamily, waitForAll } from 'recoil';
 
 import { getList } from '../utils/omdb';
-import { hiddenListState, searchState } from './atoms';
+import { hiddenListState } from './atoms';
+
+type SearchParams = {
+  query: string;
+  page: number;
+};
 
 export const omdbSearchQuery = selectorFamily({
   key: 'omdbSearchQuery',
-  get: (page: number) => ({ get }) => getList(get(searchState), page),
+  get: (params: SearchParams) => () => getList(params.query, params.page),
 });
 
 export const filteredSearchQuery = selectorFamily({
   key: 'filteredSearchQuery',
-  get: (page: number) => ({ get }) => {
+  get: (params: SearchParams) => ({ get }) => {
     // waitForAll used to track multiple dependences in recoil
-    const [list, hiddenList] = get(waitForAll([omdbSearchQuery(page), hiddenListState]));
+    const [list, hiddenList] = get(waitForAll([omdbSearchQuery(params), hiddenListState]));
 
-    return list.filter((item) => !hiddenList.includes(item.id));
+    return list.filter((movie) => !hiddenList.includes(movie.id));
   },
 });

@@ -4,17 +4,17 @@ const API_KEY = '7030d0e8';
 const SEARCH_URL = 'https://www.omdbapi.com';
 
 interface SearchData {
-  Search: SearchItem[];
+  Search: SearchMovie[];
 }
 
-interface SearchItem {
+interface SearchMovie {
   imdbID: string;
   Title: string;
   Year: string;
   Poster: string;
 }
 
-export interface Item {
+export interface Movie {
   id: string;
   title: string;
   year: string;
@@ -22,7 +22,7 @@ export interface Item {
 }
 
 export const getList = memoize(
-  async (term: string, page: number = 1): Promise<Item[]> => {
+  async (term: string, page: number = 1): Promise<Movie[]> => {
     if (!term) {
       return [];
     }
@@ -44,12 +44,12 @@ export const getList = memoize(
     const data: SearchData = await response.json();
 
     if (data.Search) {
-      return data.Search.map((item) => {
+      return data.Search.map((movie) => {
         return {
-          id: item.imdbID,
-          title: item.Title,
-          year: item.Year,
-          image: item.Poster,
+          id: movie.imdbID,
+          title: movie.Title,
+          year: movie.Year,
+          image: movie.Poster,
         };
       });
     } else {
@@ -59,7 +59,7 @@ export const getList = memoize(
 );
 
 // export const getMovieDetails = memoize(
-//   async (term: string): Promise<Item[]> => {
+//   async (term: string): Promise<Movie[]> => {
 //     const url = new URL(SEARCH_URL);
 //     url.searchParams.append('apikey', API_KEY);
 //     url.searchParams.append('i', term);
@@ -76,9 +76,9 @@ export const getList = memoize(
 
 //     const data: SearchData = await response.json();
 
-//     return data.Search.map((item) => {
+//     return data.Search.map((movie) => {
 //       return {
-//         ...item,
+//         ...movie,
 //         {
 //           Rated,
 //           Released,
