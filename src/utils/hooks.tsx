@@ -1,9 +1,8 @@
-import { useRecoilValue } from 'recoil';
-
-import { searchState } from '../recoil/atoms';
+import { useLocation } from 'react-router-dom';
 
 export function useSearchTerm() {
-  const searchTerm = useRecoilValue(searchState);
+  const location = useLocation();
+  const query = new URLSearchParams(location.search).get('q');
 
-  return searchTerm;
+  return query || '';
 }

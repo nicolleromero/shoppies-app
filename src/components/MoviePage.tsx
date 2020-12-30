@@ -14,7 +14,6 @@ type Props = {
 export function MoviePage(props: Props) {
   const results = useRecoilValue(filteredSearchQuery(props));
 
-  console.log('result', results);
   if (!props.query && !results.length) {
     return null;
   }

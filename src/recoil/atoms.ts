@@ -20,12 +20,6 @@ export const nominationListState = atom<Movie[]>({
   effects_UNSTABLE: [localStorageEffect('nominationListState')],
 });
 
-export const searchState = atom<string>({
-  key: 'searchState',
-  default: '',
-  effects_UNSTABLE: [localStorageEffect('searchState')],
-});
-
 export const selectedState = atom({
   key: 'selectedState',
   default: [],

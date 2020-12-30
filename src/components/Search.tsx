@@ -1,20 +1,29 @@
-import React, { useState } from 'react';
-import { useRecoilState, useSetRecoilState } from 'recoil';
+import React, { useLayoutEffect, useState } from 'react';
+import { useSetRecoilState } from 'recoil';
+import { useHistory } from 'react-router-dom';
 
-import { hiddenListState, searchState } from '../recoil/atoms';
+import { hiddenListState } from '../recoil/atoms';
+import { useSearchTerm } from '../utils/hooks';
 
 import './Search.css';
 
 export function Search() {
   const setHiddenList = useSetRecoilState(hiddenListState);
-  const [searchTerm, setSearchTerm] = useRecoilState(searchState);
-  const [title, setTitle] = useState(searchTerm);
+  const searchTerm = useSearchTerm();
+  const [value, setValue] = useState(searchTerm);
+  let history = useHistory();
+
+  useLayoutEffect(() => {
+    setValue(searchTerm);
+  }, [searchTerm]);
 
   function handleSetSearchTerm(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
     setHiddenList([]);
-    setSearchTerm(title.trim().replace(/\s+/g, ' '));
+
+    const query = value.trim().replace(/\s+/g, ' ');
+    history.push(`/?q=${encodeURIComponent(query)}`);
   }
 
   return (
@@ -22,17 +31,17 @@ export function Search() {
       <input
         type="text"
         placeholder="Enter the title of a movie"
-        value={title}
+        value={value}
         aria-label="search term input"
-        onChange={(e) => setTitle(e.target.value)}
+        onChange={(e) => setValue(e.target.value)}
       />
       <button
         className="button-submit"
         type="submit"
-        disabled={!title.trim()}
+        disabled={!value.trim()}
         aria-label="submit search"
       >
-        SEARCH
+        Search
       </button>
     </form>
   );
