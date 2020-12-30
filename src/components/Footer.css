@@ -10,4 +10,20 @@
     rgb(116, 114, 114, 0.95) 100%
   );
   backdrop-filter: blur(5px);
+
+  /* background: linear-gradient(-45deg, rgb(255, 255, 255, 0.95), rgba(167, 164, 164, 0.95), #0a0a0a);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  } */
 }
