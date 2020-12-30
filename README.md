@@ -22,7 +22,7 @@ Prior to joining Hackbright, I was a Senior Content Strategist at an ed tech agg
 - Recoil (state management)
 - React Router
 - React Spring
-- React Flip Toolkit (animations)
+- React Flip Toolkit (https://github.com/aholachek/react-flip-toolkit)
 - React Tooltip
 - OMDB API
 - Jest Testing Framework
@@ -58,4 +58,4 @@ Prior to joining Hackbright, I was a Senior Content Strategist at an ed tech agg
 ## <a name="license"></a>License
 
 - MIT © Nicolle Romero 2020
-- Homepage Photo by Katerina Limpitsouni
+- Homepage Photo by Katerina Limpitsouni (unDraw: https://undraw.co/illustrations)

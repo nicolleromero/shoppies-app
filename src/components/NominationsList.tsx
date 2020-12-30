@@ -12,7 +12,7 @@ export function NominationsList() {
   const placeholders = [];
 
   for (let i = 0; i < MAX_NOMINATIONS - list.length; i++) {
-    placeholders.push(<div className="placeholder" key={i} />);
+    placeholders.push(<NominatedMovie key={i} />);
   }
 
   return (

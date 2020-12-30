@@ -7,7 +7,7 @@ import { Item } from '../utils/omdb';
 import './Poster.css';
 
 type Props = React.HTMLAttributes<HTMLDivElement> & {
-  item: Item;
+  item?: Item;
 };
 
 type XYS = readonly [number, number, number];
@@ -29,6 +29,10 @@ export function Poster({ item, ...props }: Props) {
     config: { mass: 5, tension: 350, friction: 40 },
   }));
 
+  if (!item) {
+    return <div {...props} className="poster placeholder" />;
+  }
+
   return (
     <Flipped flipId={item.id}>
       <div {...props} className="poster">
@@ -41,7 +45,7 @@ export function Poster({ item, ...props }: Props) {
           onMouseLeave={() => set({ xys: [0, 0, 1] })}
           style={{ transform: springProps.xys.interpolate(trans as any) }}
         >
-          <img alt="" src={item.image !== 'N/A' ? item.image : '/movie_poster.png'} />
+          <img src={item.image !== 'N/A' ? item.image : '/movie_poster.png'} alt={item.title} />
           {props.children}
         </animated.div>
       </div>

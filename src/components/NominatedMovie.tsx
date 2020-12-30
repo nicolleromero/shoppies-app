@@ -10,14 +10,14 @@ import { Poster } from './Poster';
 import './NominatedMovie.css';
 
 type Props = {
-  item: Item;
+  item?: Item;
 };
 
 export function NominatedMovie(props: Props) {
   const setHiddenList = useSetRecoilState(hiddenListState);
   const setNominationList = useSetRecoilState(nominationListState);
   const { item } = props;
-  const itemId = item.id;
+  const itemId = item?.id;
 
   useEffect(() => {
     ReactTooltip.rebuild();
@@ -30,9 +30,13 @@ export function NominatedMovie(props: Props) {
 
   return (
     <div className="nominated-movie" data-testid={itemId}>
-      <Poster data-tip={`${item.title} (${item.year})`} item={item}>
-        <DeleteButton item={item} onClick={handleUnnominateMovie} />
-      </Poster>
+      {item ? (
+        <Poster data-tip={`${item.title} (${item.year})`} item={item}>
+          <DeleteButton item={item} onClick={handleUnnominateMovie} />
+        </Poster>
+      ) : (
+        <Poster />
+      )}
     </div>
   );
 }
