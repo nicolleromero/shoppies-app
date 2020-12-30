@@ -2,12 +2,12 @@ import React from 'react';
 import { Flipped } from 'react-flip-toolkit';
 import { useSpring, animated } from 'react-spring';
 
-import { Item } from '../utils/omdb';
+import { Movie } from '../utils/omdb';
 
 import './Poster.css';
 
 type Props = React.HTMLAttributes<HTMLDivElement> & {
-  item?: Item;
+  movie?: Movie;
 };
 
 type XYS = readonly [number, number, number];
@@ -23,18 +23,18 @@ const calc = (element: HTMLElement, x: number, y: number): XYS => {
 const trans = (x: number, y: number, s: number) =>
   `perspective(1000px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
 
-export function Poster({ item, ...props }: Props) {
+export function Poster({ movie, ...props }: Props) {
   const [springProps, set] = useSpring<{ xys: XYS }>(() => ({
     xys: [0, 0, 1] as const,
     config: { mass: 5, tension: 350, friction: 40 },
   }));
 
-  if (!item) {
+  if (!movie) {
     return <div {...props} className="poster placeholder" />;
   }
 
   return (
-    <Flipped flipId={item.id}>
+    <Flipped flipId={movie.id}>
       <div {...props} className="poster">
         <animated.div
           {...props}
@@ -45,7 +45,7 @@ export function Poster({ item, ...props }: Props) {
           onMouseLeave={() => set({ xys: [0, 0, 1] })}
           style={{ transform: springProps.xys.interpolate(trans as any) }}
         >
-          <img src={item.image !== 'N/A' ? item.image : '/movie_poster.png'} alt={item.title} />
+          <img src={movie.image !== 'N/A' ? movie.image : '/movie_poster.png'} alt={movie.title} />
           {props.children}
         </animated.div>
       </div>

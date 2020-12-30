@@ -3,36 +3,36 @@ import ReactTooltip from 'react-tooltip';
 import { useSetRecoilState } from 'recoil';
 
 import { hiddenListState, nominationListState } from '../recoil/atoms';
-import { Item } from '../utils/omdb';
+import { Movie } from '../utils/omdb';
 import { DeleteButton } from './DeleteButton';
 import { Poster } from './Poster';
 
 import './NominatedMovie.css';
 
 type Props = {
-  item?: Item;
+  movie?: Movie;
 };
 
 export function NominatedMovie(props: Props) {
   const setHiddenList = useSetRecoilState(hiddenListState);
   const setNominationList = useSetRecoilState(nominationListState);
-  const { item } = props;
-  const itemId = item?.id;
+  const { movie } = props;
+  const movieId = movie?.id;
 
   useEffect(() => {
     ReactTooltip.rebuild();
-  }, [item]);
+  }, [movie]);
 
   function handleUnnominateMovie() {
-    setHiddenList((hiddenList) => hiddenList.filter((id) => id !== itemId));
-    setNominationList((nominationList) => nominationList.filter(({ id }) => id !== itemId));
+    setHiddenList((hiddenList) => hiddenList.filter((id) => id !== movieId));
+    setNominationList((nominationList) => nominationList.filter(({ id }) => id !== movieId));
   }
 
   return (
-    <div className="nominated-movie" data-testid={itemId}>
-      {item ? (
-        <Poster data-tip={`${item.title} (${item.year})`} item={item}>
-          <DeleteButton item={item} onClick={handleUnnominateMovie} />
+    <div className="nominated-movie" data-testid={movieId}>
+      {movie ? (
+        <Poster data-tip={`${movie.title} (${movie.year})`} movie={movie}>
+          <DeleteButton movie={movie} onClick={handleUnnominateMovie} />
         </Poster>
       ) : (
         <Poster />

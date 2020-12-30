@@ -1,13 +1,12 @@
 import { Flipped } from 'react-flip-toolkit';
-import { useRecoilValue } from 'recoil';
 
-import { searchState } from '../recoil/atoms';
+import { useSearchTerm } from '../utils/hooks';
 import { Search } from './Search';
 
 import './Header.css';
 
 export function Header() {
-  const searchTerm = useRecoilValue(searchState);
+  const searchTerm = useSearchTerm();
 
   return (
     <div className={searchTerm ? 'center-children-shift' : 'center-children'}>

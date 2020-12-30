@@ -17,8 +17,8 @@ export function NominationsList() {
 
   return (
     <div className="nominations-footer">
-      {list.map((item) => {
-        return <NominatedMovie item={item} key={item.id} />;
+      {list.map((movie) => {
+        return <NominatedMovie movie={movie} key={movie.id} />;
       })}
       {placeholders}
     </div>

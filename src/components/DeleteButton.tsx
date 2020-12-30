@@ -1,9 +1,9 @@
-import { Item } from '../utils/omdb';
+import { Movie } from '../utils/omdb';
 
 import './DeleteButton.css';
 
 type Props = {
-  item: Item;
+  movie: Movie;
   onClick: () => void;
 };
 

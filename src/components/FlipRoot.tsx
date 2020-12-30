@@ -2,7 +2,8 @@ import React from 'react';
 import { Flipper } from 'react-flip-toolkit';
 import { useRecoilValue } from 'recoil';
 
-import { hiddenListState, searchState } from '../recoil/atoms';
+import { hiddenListState } from '../recoil/atoms';
+import { useSearchTerm } from '../utils/hooks';
 
 type Props = {
   children?: React.ReactNode;
@@ -11,7 +12,7 @@ type Props = {
 
 export function FlipRoot(props: Props) {
   const hiddenList = useRecoilValue(hiddenListState);
-  const searchTerm = useRecoilValue(searchState);
+  const searchTerm = useSearchTerm();
 
   return (
     <Flipper
