@@ -11,20 +11,17 @@ export function Header() {
   return (
     <div className={searchTerm ? 'center-children-shift' : 'center-children'}>
       <Flipped flipId="awards">
-        <img
-          className={searchTerm ? 'awards-shift' : 'awards'}
-          alt="scene of awards ceremony"
-          src="/awards.svg"
-        />
+        <img className="awards" alt="scene of awards ceremony" src="/awards.svg" />
       </Flipped>
       <Flipped flipId="title">
-        <h2 className={searchTerm ? 'title-shift' : 'title'}>the shoppies</h2>
+        <h2 className="title">the shoppies</h2>
       </Flipped>
       <Flipped flipId="search-input">
-        <div className={searchTerm ? 'input-shift' : ''}>
+        <div className="input">
           <Search />
         </div>
       </Flipped>
+      <div className="side-item"></div>
     </div>
   );
 }

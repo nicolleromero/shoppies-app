@@ -1,10 +1,17 @@
 .search-field {
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
 .search-field input {
-  min-width: 310px;
+  text-align: center;
+  flex-grow: 1;
+  min-width: 300px;
+  max-width: 400px;
   padding: 15px;
+  margin-left: 70px;
+  padding-right: 80px;
   background: #fff;
   border-width: 1px;
   border-color: lightgrey;
@@ -15,14 +22,15 @@
 }
 
 .button-submit {
-  position: absolute;
-  right: 8px;
-  top: 9px;
+  align-self: center;
+  max-height: 55px;
+  position: relative;
+  left: -74px;
   border: none;
   background: #008060;
   color: #fff;
   border-radius: 3px;
-  padding: 10px;
+  padding: 12px;
   transition: all 0.2s;
 }
 
