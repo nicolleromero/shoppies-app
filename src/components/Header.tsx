@@ -10,14 +10,16 @@ export function Header() {
 
   return (
     <div className={searchTerm ? 'center-children-shift' : 'center-children'}>
-      <Flipped flipId="awards">
-        <img className="awards" alt="scene of awards ceremony" src="/awards.svg" />
-      </Flipped>
-      <Flipped flipId="title">
-        <h2 className="title">the shoppies</h2>
-      </Flipped>
+      <div className="side-item">
+        <Flipped flipId="awards">
+          <img className="awards" alt="scene of awards ceremony" src="/awards.svg" />
+        </Flipped>
+        <Flipped flipId="title">
+          <h2 className="title">the shoppies</h2>
+        </Flipped>
+      </div>
       <Flipped flipId="search-input">
-        <div className="input">
+        <div className="search-container">
           <Search />
         </div>
       </Flipped>

@@ -19,7 +19,7 @@ export function SuccessBar() {
         Congratulations! You've completed your nominations!<span className="star">💫</span>
       </p>
       <button className="reset-button" onClick={handleReset}>
-        RESET
+        Reset
       </button>
     </div>
   );

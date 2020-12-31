@@ -5,13 +5,12 @@
 }
 
 .search-field input {
-  text-align: center;
   flex-grow: 1;
   min-width: 300px;
   max-width: 400px;
   padding: 15px;
-  margin-left: 70px;
-  padding-right: 80px;
+  margin-left: 50px;
+  padding-right: 43px;
   background: #fff;
   border-width: 1px;
   border-color: lightgrey;

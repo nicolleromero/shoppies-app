@@ -21,8 +21,8 @@ export function Footer() {
           <CallToActionBar />
         ) : (
           <>
-            {list.length === MAX_NOMINATIONS && <SuccessBar />}
             <NominationsList />
+            {list.length === MAX_NOMINATIONS && <SuccessBar />}
           </>
         )}
       </div>
