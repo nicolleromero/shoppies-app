@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { useRecoilValue } from 'recoil';
 
 import { filteredSearchQuery } from '../recoil/selectors';
@@ -12,6 +12,14 @@ type Props = {
 };
 
 export function MoviePage(props: Props) {
+  return (
+    <Suspense fallback={<MoviePageFallback />}>
+      <MoviePageContent {...props} />
+    </Suspense>
+  );
+}
+
+function MoviePageContent(props: Props) {
   const results = useRecoilValue(filteredSearchQuery(props));
 
   if (!props.query && !results.length) {
@@ -32,4 +40,14 @@ export function MoviePage(props: Props) {
       ) : null}
     </>
   );
+}
+
+function MoviePageFallback() {
+  const cards = [];
+
+  for (let i = 0; i < 8; i++) {
+    cards.push(<MovieCard key={i} />);
+  }
+
+  return <>{cards}</>;
 }
