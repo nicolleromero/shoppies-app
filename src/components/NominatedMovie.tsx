@@ -35,7 +35,7 @@ export function NominatedMovie(props: Props) {
           <DeleteButton movie={movie} onClick={handleUnnominateMovie} />
         </Poster>
       ) : (
-        <Poster />
+        <Poster empty={true} />
       )}
     </div>
   );

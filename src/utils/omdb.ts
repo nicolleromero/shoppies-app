@@ -59,10 +59,14 @@ export const getList = memoize(
 );
 
 // export const getMovieDetails = memoize(
-//   async (term: string): Promise<Movie[]> => {
+//   async (title: string): Promise<Movie[]> => {
+//     if (!title) {
+//       return [];
+//     }
+
 //     const url = new URL(SEARCH_URL);
 //     url.searchParams.append('apikey', API_KEY);
-//     url.searchParams.append('i', term);
+//     url.searchParams.append('t', title);
 //     url.searchParams.append('type', 'movie');
 //     url.searchParams.append('plot', 'full');
 
@@ -74,19 +78,6 @@ export const getList = memoize(
 //       throw new Error(message);
 //     }
 
-//     const data: SearchData = await response.json();
-
-//     return data.Search.map((movie) => {
-//       return {
-//         ...movie,
-//         {
-//           Rated,
-//           Released,
-//           Runtime,
-//           Genre,
-
-//         }
-//       };
-//     });
+//     const data: SearchMovieDetails = await response.json();
 //   },
 // );

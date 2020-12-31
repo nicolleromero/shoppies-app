@@ -19,13 +19,14 @@ Prior to joining Hackbright, I was a Senior Content Strategist at an ed tech agg
 
 - React
 - TypeScript
-- Recoil (state management)
-- React Router
-- React Spring
-- React Flip Toolkit (https://github.com/aholachek/react-flip-toolkit)
-- React Tooltip
-- OMDB API
-- Jest Testing Framework
+- [Recoil](https://recoiljs.org/) for state management
+- [React Router](https://reactrouter.com/)
+- [React Spring](https://github.com/pmndrs/react-spring)
+- [React Flip Toolkit](https://github.com/aholachek/react-flip-toolkit)
+- [React Content Loader](https://github.com/danilowoz/react-content-loader)
+- [React Tooltip](https://www.npmjs.com/package/react-tooltip)
+- [OMDB API](https://www.omdbapi.com/)
+- [Jest Testing Framework](https://jestjs.io/docs/en/tutorial-react)
 - HTML
 - CSS
 
