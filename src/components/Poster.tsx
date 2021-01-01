@@ -1,6 +1,7 @@
 import React from 'react';
 import ContentLoader from 'react-content-loader';
 import { Flipped } from 'react-flip-toolkit';
+import { Link } from 'react-router-dom';
 import { useSpring, animated } from 'react-spring';
 
 import { Movie } from '../utils/omdb';
@@ -41,20 +42,25 @@ export function Poster({ movie, empty, ...props }: Props) {
 
   return (
     <Flipped flipId={movie.id}>
-      <div {...props} className="poster">
-        <animated.div
-          {...props}
-          className="poster-inner"
-          onMouseMove={(event) =>
-            set({ xys: calc(event.currentTarget, event.clientX, event.clientY) })
-          }
-          onMouseLeave={() => set({ xys: [0, 0, 1] })}
-          style={{ transform: springProps.xys.interpolate(trans as any) }}
-        >
-          <img src={movie.image !== 'N/A' ? movie.image : '/movie_poster.png'} alt={movie.title} />
-          {props.children}
-        </animated.div>
-      </div>
+      <Link to={`/movie/${movie.id}`}>
+        <div {...props} className="poster">
+          <animated.div
+            {...props}
+            className="poster-inner"
+            onMouseMove={(event) =>
+              set({ xys: calc(event.currentTarget, event.clientX, event.clientY) })
+            }
+            onMouseLeave={() => set({ xys: [0, 0, 1] })}
+            style={{ transform: springProps.xys.interpolate(trans as any) }}
+          >
+            <img
+              src={movie.image !== 'N/A' ? movie.image : '/movie_poster.png'}
+              alt={movie.title}
+            />
+            {props.children}
+          </animated.div>
+        </div>
+      </Link>
     </Flipped>
   );
 }
