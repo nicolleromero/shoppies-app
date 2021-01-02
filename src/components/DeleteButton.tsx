@@ -8,8 +8,15 @@ type Props = {
 };
 
 export function DeleteButton(props: Props) {
+  function handleClick(event: React.MouseEvent<HTMLButtonElement>) {
+    // Prevent showing movie details.
+    event.preventDefault();
+
+    props.onClick();
+  }
+
   return (
-    <button className="delete-button" onClick={props.onClick}>
+    <button className="delete-button" onClick={handleClick}>
       ✕
     </button>
   );
