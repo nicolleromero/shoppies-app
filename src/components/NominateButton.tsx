@@ -3,6 +3,7 @@ import { useRecoilState, useSetRecoilState } from 'recoil';
 import { MAX_NOMINATIONS } from '../constants';
 import { hiddenListState, nominationListState } from '../recoil/atoms';
 import { Movie } from '../utils/omdb';
+import { Sparkles } from './Sparkles';
 
 import './NominateButton.css';
 
@@ -16,7 +17,10 @@ export function NominateButton(props: Props) {
   const movieId = props.movie.id;
   const nominated = nominationsList.some((obj) => obj.id === movieId);
 
-  function handleNominate() {
+  function handleNominate(event: React.MouseEvent<HTMLButtonElement>) {
+    // Prevent opening movie details.
+    event.preventDefault();
+
     setNominationsList((nominationsList) => [...nominationsList, props.movie]);
     setHiddenList((hiddenList) => [...hiddenList, movieId]);
   }
@@ -26,8 +30,10 @@ export function NominateButton(props: Props) {
   }
 
   return (
-    <button className="nominate-button" disabled={nominated} onClick={handleNominate}>
-      {nominated ? '✨Nominated✨' : '✨Nominate!✨'}
-    </button>
+    <Sparkles className="nominate-button">
+      <button disabled={nominated} onClick={handleNominate}>
+        {nominated ? 'Nominated' : 'Nominate!'}
+      </button>
+    </Sparkles>
   );
 }
