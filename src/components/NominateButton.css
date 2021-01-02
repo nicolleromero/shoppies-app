@@ -21,7 +21,7 @@
   border-radius: 3px;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.5);
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(0, 0, 0, 0.9);
   height: 40px;
   width: 150px;
 }
@@ -30,6 +30,7 @@
   opacity: 1;
 }
 
-.nominate-button:disabled {
-  opacity: 0.75;
+.nominate-button button:disabled {
+  opacity: 0.6;
+  cursor: default;
 }
