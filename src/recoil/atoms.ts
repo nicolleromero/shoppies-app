@@ -11,7 +11,6 @@ export const inputState = atom<string>({
 export const hiddenListState = atom<string[]>({
   key: 'hiddenListState',
   default: [],
-  effects_UNSTABLE: [localStorageEffect('hiddenListState')],
 });
 
 export const nominationListState = atom<Movie[]>({

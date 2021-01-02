@@ -1,6 +1,6 @@
 import { selectorFamily, waitForAll } from 'recoil';
 
-import { getList, getMovieDetails } from '../utils/omdb';
+import { getSearchResults, getMovieDetails } from '../utils/omdb';
 import { hiddenListState } from './atoms';
 
 type SearchParams = {
@@ -10,7 +10,7 @@ type SearchParams = {
 
 export const omdbSearchQuery = selectorFamily({
   key: 'omdbSearchQuery',
-  get: (params: SearchParams) => () => getList(params.query, params.page),
+  get: (params: SearchParams) => () => getSearchResults(params.query, params.page),
 });
 
 export const filteredSearchQuery = selectorFamily({

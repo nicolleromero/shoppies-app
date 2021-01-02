@@ -92,7 +92,7 @@ async function omdbAPICall(params: Record<string, string>) {
   return await response.json();
 }
 
-export const getList = memoize(
+export const getSearchResults = memoize(
   async (term: string, page: number = 1): Promise<Movie[]> => {
     if (!term) {
       return [];
