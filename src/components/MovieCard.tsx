@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSetRecoilState } from 'recoil';
 import ContentLoader from 'react-content-loader';
+import { useInView } from 'react-intersection-observer';
 
 import { Movie } from '../utils/omdb';
 import { DeleteButton } from './DeleteButton';
@@ -13,11 +14,21 @@ import './MovieCard.css';
 
 type Props = {
   movie?: Movie;
+  onIntersect?: () => void;
 };
 
 export function MovieCard(props: Props) {
+  const { movie, onIntersect } = props;
   const setHiddenList = useSetRecoilState(hiddenListState);
-  const { movie } = props;
+  const { ref, inView } = useInView({
+    threshold: 0,
+  });
+
+  useEffect(() => {
+    if (inView && onIntersect) {
+      onIntersect();
+    }
+  }, [inView, onIntersect]);
 
   if (!movie) {
     return (
@@ -37,7 +48,7 @@ export function MovieCard(props: Props) {
   }
 
   return (
-    <div className="movie" role="listitem" data-testid={movie.title}>
+    <div className="movie" role="listitem" data-testid={movie.title} ref={ref}>
       <Poster movie={movie}>
         <DeleteButton movie={movie} onClick={handleHideMovie} />
         <NominateButton movie={movie} />

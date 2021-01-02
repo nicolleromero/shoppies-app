@@ -9,6 +9,7 @@ import './MovieList.css';
 type Props = {
   query: string;
   page: number;
+  onIntersect?: () => void;
 };
 
 export function MoviePage(props: Props) {
@@ -20,7 +21,8 @@ export function MoviePage(props: Props) {
 }
 
 function MoviePageContent(props: Props) {
-  const results = useRecoilValue(filteredSearchQuery(props));
+  const { query, page, onIntersect } = props;
+  const results = useRecoilValue(filteredSearchQuery({ query, page }));
 
   if (!props.query && !results.length) {
     return null;
@@ -29,9 +31,13 @@ function MoviePageContent(props: Props) {
   return (
     <>
       {results.length ? (
-        results.map((movie) => {
-          return <MovieCard movie={movie} key={movie.id} />;
-        })
+        results.map((movie, index) => (
+          <MovieCard
+            movie={movie}
+            key={movie.id}
+            onIntersect={index === 0 ? onIntersect : undefined}
+          />
+        ))
       ) : props.page === 1 ? (
         <p className="no-results-message" role="listitem">
           We weren't able to find any movies that match that title. Please modify your search and
