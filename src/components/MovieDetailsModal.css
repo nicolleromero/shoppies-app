@@ -1,0 +1,100 @@
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 25%;
+  right: 0;
+  height: 500px;
+  width: 700px;
+  border: none;
+  background: white;
+  display: flex;
+  justify-content: flex-start;
+  align-content: flex-start;
+  padding: 15px;
+  margin: 15px;
+}
+
+.movie-details-title {
+  font-size: 28px;
+  margin-left: 10px;
+  margin-top: 5px;
+  width: 450px;
+  height: 120px;
+  font-weight: bold;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial,
+    sans-serif;
+  color: #fff;
+  background: rgb(15, 15, 15);
+  padding: 10px;
+}
+
+.year {
+  font-size: 22px;
+  color: lightgrey;
+}
+
+.supporting-details {
+  font-size: 14px;
+  margin-top: 5px;
+  font-weight: normal;
+}
+
+.plot {
+  font-size: 16px;
+  color: black;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: normal;
+  margin-top: 40px;
+}
+
+.ribbon {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  position: absolute;
+}
+.ribbon::before,
+.ribbon::after {
+  position: absolute;
+  z-index: -1;
+  content: '';
+  display: block;
+  border: 5px solid gold;
+}
+.ribbon span {
+  position: absolute;
+  display: block;
+  width: 225px;
+  padding: 15px 0;
+  background-color: gold;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  font: 700 18px/1 'Lato', sans-serif;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.ribbon-top-right {
+  top: -10px;
+  right: -10px;
+}
+.ribbon-top-right::before,
+.ribbon-top-right::after {
+  border-top-color: transparent;
+  border-right-color: transparent;
+}
+.ribbon-top-right::before {
+  top: 0;
+  left: 0;
+}
+.ribbon-top-right::after {
+  bottom: 0;
+  right: 0;
+}
+.ribbon-top-right span {
+  left: -25px;
+  top: 30px;
+  transform: rotate(45deg);
+}
