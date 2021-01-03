@@ -4,13 +4,17 @@ import { Flipped } from 'react-flip-toolkit';
 import { Link } from 'react-router-dom';
 import { useSpring, animated } from 'react-spring';
 
+import { useSearchTerm } from '../utils/hooks';
 import { Movie } from '../utils/omdb';
 
 import './Poster.css';
 
-type Props = React.HTMLAttributes<HTMLDivElement> & {
-  movie?: Movie;
+type Props = {
+  children?: React.ReactNode;
+  clickable?: boolean;
   empty?: boolean;
+  movie?: Movie;
+  tooltip?: boolean;
 };
 
 type XYS = readonly [number, number, number];
@@ -26,26 +30,37 @@ const calc = (element: HTMLElement, x: number, y: number): XYS => {
 const trans = (x: number, y: number, s: number) =>
   `perspective(1000px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
 
-export function Poster({ movie, empty, ...props }: Props) {
+export function Poster({
+  children,
+  clickable = true,
+  empty = false,
+  movie,
+  tooltip = false,
+}: Props) {
+  const searchTerm = useSearchTerm();
+
   const [springProps, set] = useSpring<{ xys: XYS }>(() => ({
     xys: [0, 0, 1] as const,
     config: { mass: 5, tension: 350, friction: 40 },
   }));
 
   if (empty || !movie) {
-    return (
-      <div {...props} className={`poster ${empty ? 'empty' : ''}`}>
-        {!empty && <PosterGlimmer />}
-      </div>
-    );
+    return <div className={`poster ${empty ? 'empty' : ''}`}>{!empty && <PosterGlimmer />}</div>;
   }
 
+  const src = movie.image !== 'N/A' ? movie.image : '/movie_poster.png';
+  const tip = tooltip ? `${movie.title} (${movie.year})` : undefined;
+
+  // Change flipId when showing details so there is an animation.
   return (
     <Flipped flipId={movie.id}>
-      <Link to={`/movie/${movie.id}`}>
-        <div {...props} className="poster">
+      {clickable ? (
+        <Link
+          to={`/movie/${movie.id}?q=${encodeURIComponent(searchTerm)}`}
+          className="poster"
+          data-tip={tip}
+        >
           <animated.div
-            {...props}
             className="poster-inner"
             onMouseMove={(event) =>
               set({ xys: calc(event.currentTarget, event.clientX, event.clientY) })
@@ -53,14 +68,18 @@ export function Poster({ movie, empty, ...props }: Props) {
             onMouseLeave={() => set({ xys: [0, 0, 1] })}
             style={{ transform: springProps.xys.interpolate(trans as any) }}
           >
-            <img
-              src={movie.image !== 'N/A' ? movie.image : '/movie_poster.png'}
-              alt={movie.title}
-            />
-            {props.children}
+            <img src={src} alt={movie.title} />
+            {children}
           </animated.div>
+        </Link>
+      ) : (
+        <div className="poster" data-tip={tip}>
+          <div className="poster-inner">
+            <img src={src} alt={movie.title} />
+            {children}
+          </div>
         </div>
-      </Link>
+      )}
     </Flipped>
   );
 }
