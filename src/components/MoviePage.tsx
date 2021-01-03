@@ -1,7 +1,10 @@
 import React, { Suspense } from 'react';
+import { Redirect } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
 
 import { filteredSearchQuery } from '../recoil/selectors';
+import { range } from '../utils/helpers';
+import { ErrorBoundary } from './ErrorBoundary';
 import { MovieCard } from './MovieCard';
 
 import './MovieList.css';
@@ -14,9 +17,11 @@ type Props = {
 
 export function MoviePage(props: Props) {
   return (
-    <Suspense fallback={<MoviePageFallback />}>
-      <MoviePageContent {...props} />
-    </Suspense>
+    <ErrorBoundary fallback={<Redirect to="/" />}>
+      <Suspense fallback={<MoviePageFallback />}>
+        <MoviePageContent {...props} />
+      </Suspense>
+    </ErrorBoundary>
   );
 }
 
@@ -49,11 +54,11 @@ function MoviePageContent(props: Props) {
 }
 
 function MoviePageFallback() {
-  const cards = [];
-
-  for (let i = 0; i < 8; i++) {
-    cards.push(<MovieCard key={i} />);
-  }
-
-  return <>{cards}</>;
+  return (
+    <>
+      {range(8).map((i) => (
+        <MovieCard key={i} />
+      ))}
+    </>
+  );
 }

@@ -89,7 +89,14 @@ async function omdbAPICall(params: Record<string, string>) {
     throw new Error(message);
   }
 
-  return await response.json();
+  const data = await response.json();
+
+  if (data.Error) {
+    console.error(data.Error);
+    throw new Error(data.Error);
+  }
+
+  return data;
 }
 
 export const getSearchResults = memoize(
