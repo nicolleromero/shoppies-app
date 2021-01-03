@@ -1,35 +1,39 @@
 .modal {
   position: fixed;
   top: 0;
-  bottom: 0;
-  left: 25%;
-  right: 0;
-  height: 500px;
-  width: 700px;
+  left: 20%;
+  right: 20%;
   border: none;
   background: white;
   display: flex;
-  justify-content: flex-start;
-  align-content: flex-start;
   padding: 15px;
   margin: 15px;
 }
 
-.movie-details-title {
-  font-size: 28px;
-  margin-left: 10px;
-  margin-top: 5px;
-  width: 450px;
-  height: 120px;
-  font-weight: bold;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial,
-    sans-serif;
-  color: #fff;
-  background: rgb(15, 15, 15);
-  padding: 10px;
+.modal .column {
+  justify-content: center;
+  padding: 0 10px;
 }
 
-.year {
+.modal .nominate-button {
+  margin-top: 10px;
+}
+
+.movie-details {
+  background: #383f41;
+  padding: 15px 10px;
+  border-radius: 5px;
+  color: #fff;
+  text-align: left;
+}
+
+.movie-details .title {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.movie-details .year {
   font-size: 22px;
   color: lightgrey;
 }
@@ -43,9 +47,34 @@
 .plot {
   font-size: 16px;
   color: black;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-weight: normal;
-  margin-top: 40px;
+  margin-top: 10px;
+}
+
+.ratings {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.ratings-score {
+  text-align: center;
+  flex: 1;
+}
+
+.ratings-score img {
+  width: 20%;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.metacrtic-score {
+  width: auto;
+  background-color: #f7d05e;
+  color: #fff;
+  font-size: 24px;
+  padding: 5px;
+  margin-right: 10px;
 }
 
 .ribbon {
@@ -60,14 +89,14 @@
   z-index: -1;
   content: '';
   display: block;
-  border: 5px solid gold;
+  border: 5px solid #008060;
 }
 .ribbon span {
   position: absolute;
   display: block;
   width: 225px;
   padding: 15px 0;
-  background-color: gold;
+  background-color: #008060;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   color: #fff;
   font: 700 18px/1 'Lato', sans-serif;
