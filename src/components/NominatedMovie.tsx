@@ -31,7 +31,7 @@ export function NominatedMovie(props: Props) {
   return (
     <div className="nominated-movie" data-testid={movieId}>
       {movie ? (
-        <Poster data-tip={`${movie.title} (${movie.year})`} movie={movie}>
+        <Poster movie={movie} tooltip={true}>
           <DeleteButton movie={movie} onClick={handleUnnominateMovie} />
         </Poster>
       ) : (
