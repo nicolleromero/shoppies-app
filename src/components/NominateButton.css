@@ -1,16 +1,7 @@
 .nominate-button {
   align-items: center;
   justify-content: center;
-  position: absolute;
-  bottom: 10px;
   display: flex;
-  opacity: 0;
-  transition: opacity 0.25s ease-in-out;
-}
-.modal .nominate-button {
-  bottom: 80px;
-  left: 50px;
-  opacity: 1;
 }
 
 .nominate-button button {
@@ -24,10 +15,6 @@
   background-color: rgba(0, 0, 0, 0.9);
   height: 40px;
   width: 150px;
-}
-
-.movie:hover .nominate-button {
-  opacity: 1;
 }
 
 .nominate-button button:disabled {

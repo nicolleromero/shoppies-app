@@ -1,5 +1,5 @@
 .success-bar {
-  height: 400px;
+  height: 600px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -10,6 +10,9 @@
 
 .success-text {
   height: 30px;
+  color: rgb(240, 240, 130);
+  font-size: 24px;
+  z-index: 2;
 }
 
 .number {
@@ -38,6 +41,7 @@
   border-radius: 3px;
   padding: 10px;
   transition: all 0.2s;
+  z-index: 2;
 }
 
 .reset-button:hover {

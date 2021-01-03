@@ -9,7 +9,7 @@ export function Header() {
   const searchTerm = useSearchTerm();
 
   return (
-    <div className={searchTerm ? 'center-children-shift' : 'center-children'}>
+    <div className={`header ${searchTerm ? 'center-children-shift' : 'center-children'}`}>
       <div className="side-item">
         <Flipped flipId="awards">
           <img className="awards" alt="scene of awards ceremony" src="/awards.svg" />

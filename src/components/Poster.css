@@ -16,6 +16,7 @@
 
 .poster,
 .poster img {
+  display: block;
   border-radius: 5px;
 }
 

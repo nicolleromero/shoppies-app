@@ -5,7 +5,7 @@
   flex-direction: column;
 }
 
-.title {
+.header .title {
   text-align: center;
   margin: 20px 0;
   color: #004c3f;
