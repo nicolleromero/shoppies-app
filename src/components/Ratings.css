@@ -1,0 +1,52 @@
+.ratings {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 15px;
+}
+
+.ratings-score {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  font-size: 18px;
+}
+
+.ratings-score span {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  min-width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 24px;
+  padding: 5px;
+  margin-right: 8px;
+}
+
+.ratings-score .tomato-icon {
+  background-image: url(../images/tomato-icon.png);
+}
+
+.ratings-score .splat-icon {
+  background-image: url(../images/splat-icon.png);
+}
+
+.ratings-score .imdb-logo {
+  background-image: url(../images/imdb-logo.png);
+}
+
+.ratings-score .metacritic-score.yellow {
+  background-color: #f7d05e;
+}
+
+.ratings-score .metacritic-score.green {
+  background-color: #65cd32;
+}
+
+.ratings-score .metacritic-score.red {
+  background-color: #fe0100;
+}

@@ -8,6 +8,7 @@ import { DismissButton } from './DismissButton';
 import { ErrorBoundary } from './ErrorBoundary';
 import { NominateButton } from './NominateButton';
 import { Poster } from './Poster';
+import { Ratings } from './Ratings';
 
 import './MovieDetailsModal.css';
 
@@ -35,15 +36,6 @@ function MovieDetailsModalContent(props: Props) {
     return null;
   }
 
-  const metascore = movie.ratings[2].Value.slice(0, 2);
-  console.log(metascore);
-
-  const rottenTomatoes = Number(movie.ratings[1].Value.slice(0, 2));
-  console.log(rottenTomatoes);
-
-  const imdb = movie.ratings[0].Value.slice(0, 3);
-  console.log(imdb);
-
   return (
     <div className="modal">
       {nominated && (
@@ -65,6 +57,7 @@ function MovieDetailsModalContent(props: Props) {
             {movie.rated} | {movie.runtime} | {movie.genre} | {movie.released}
           </div>
         </div>
+        <Ratings movie={movie} />
         <div>
           <div className="plot">
             <p>
@@ -80,32 +73,6 @@ function MovieDetailsModalContent(props: Props) {
               <strong>Actors:</strong> {movie.actors}
             </p>
           </div>
-          <div className="ratings">
-            <div className="ratings-score">
-              <p>
-                <span className="metacrtic-score">{metascore}</span> Metascore
-              </p>
-            </div>
-            <div className="ratings-score">
-              <p>
-                <span>
-                  <img
-                    src={rottenTomatoes >= 60 ? '../tomato-icon.png' : '../splat-icon.png'}
-                    alt=""
-                  />
-                </span>
-                {rottenTomatoes}%
-              </p>
-            </div>
-            <div className="ratings-score">
-              <p>
-                <span>
-                  <img src="../imdb-logo.png" alt="" />
-                </span>
-                {imdb}
-              </p>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -115,8 +82,3 @@ function MovieDetailsModalContent(props: Props) {
 function MovieDetailsModalFallback() {
   return null;
 }
-
-// ratings: MovieRating[];
-// metascore: string;
-// imdbRating: string;
-// imdbVotes: string;

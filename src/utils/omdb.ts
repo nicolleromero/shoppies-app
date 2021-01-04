@@ -26,7 +26,7 @@ interface SearchMovieDetails extends SearchMovie {
   Language: string;
   Country: string;
   Awards: string;
-  Ratings: MovieRating[];
+  Ratings: SearchMovieRating[];
   Metascore: string;
   imdbRating: string;
   imdbVotes: string;
@@ -35,6 +35,11 @@ interface SearchMovieDetails extends SearchMovie {
   BoxOffice: string;
   Production: string;
   Website: string;
+}
+
+interface SearchMovieRating {
+  Source: string;
+  Value: string;
 }
 
 export interface Movie {
@@ -56,20 +61,15 @@ export interface MovieDetails extends Movie {
   language: string;
   country: string;
   awards: string;
-  ratings: MovieRating[];
-  metascore: string;
-  imdbRating: string;
+  rottenTomatoes?: number;
+  metascore?: number;
+  imdbRating?: number;
   imdbVotes: string;
   type: string;
   dvd: string;
   boxoffice: string;
   production: string;
   website: string;
-}
-
-interface MovieRating {
-  source: string;
-  value: string;
 }
 
 async function omdbAPICall(params: Record<string, string>) {
@@ -136,6 +136,9 @@ export const getMovieDetails = memoize(
       return null;
     }
 
+    // Rotten Tomatoes rating does not have its own property
+    const rottenTomatoRating = data.Ratings.find((rating) => rating.Source === 'Rotten Tomatoes');
+
     return {
       id: data.imdbID,
       title: data.Title,
@@ -152,9 +155,9 @@ export const getMovieDetails = memoize(
       country: data.Country,
       awards: data.Awards,
       image: data.Poster,
-      ratings: data.Ratings,
-      metascore: data.Metascore,
-      imdbRating: data.imdbRating,
+      rottenTomatoes: rottenTomatoRating && parseInt(rottenTomatoRating.Value),
+      metascore: data.Metascore !== 'N/A' ? Number(data.Metascore) : undefined,
+      imdbRating: data.imdbRating !== 'N/A' ? Number(data.imdbRating) : undefined,
       imdbVotes: data.imdbVotes,
       type: data.Type,
       dvd: data.DVD,

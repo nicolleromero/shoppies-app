@@ -51,32 +51,6 @@
   margin-top: 10px;
 }
 
-.ratings {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-.ratings-score {
-  text-align: center;
-  flex: 1;
-}
-
-.ratings-score img {
-  width: 20%;
-  margin-right: 10px;
-  vertical-align: middle;
-}
-
-.metacrtic-score {
-  width: auto;
-  background-color: #f7d05e;
-  color: #fff;
-  font-size: 24px;
-  padding: 5px;
-  margin-right: 10px;
-}
-
 .ribbon {
   width: 150px;
   height: 150px;
