@@ -21,6 +21,8 @@ export function SuccessBar() {
       <button className="reset-button" onClick={handleReset}>
         Reset
       </button>
+      <div className="spotlight spot1"></div>
+      <div className="spotlight spot2"></div>
     </div>
   );
 }

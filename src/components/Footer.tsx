@@ -16,13 +16,13 @@ export function Footer() {
 
   return (
     <>
-      <div className="footer">
+      <div className={list.length === MAX_NOMINATIONS ? 'footer complete' : 'footer'}>
         {!list.length ? (
           <CallToActionBar />
         ) : (
           <>
-            <NominationsList />
             {list.length === MAX_NOMINATIONS && <SuccessBar />}
+            <NominationsList />
           </>
         )}
       </div>

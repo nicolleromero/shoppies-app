@@ -1,5 +1,5 @@
 .success-bar {
-  height: 600px;
+  height: 400px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -48,4 +48,52 @@
   background: #8bca2f;
   color: #fff;
   cursor: pointer;
+}
+
+/* Spotlight css from https://codepen.io/caseymhunt/pen/honFp */
+.spot1 {
+  left: 40%;
+  animation: move 5s infinite;
+}
+.spot2 {
+  left: 60%;
+  animation: move2 5s infinite;
+}
+.spotlight {
+  position: absolute;
+  left: 50%;
+  width: 60px;
+  height: 100px;
+  border-top: 500px solid rgba(189, 199, 145, 0.25);
+  border-left: 0px solid transparent;
+  border-bottom: 0px solid #575;
+  border-right: 40px solid transparent;
+  background-color: transparent;
+  transform-origin: 50% 100% 0;
+  z-index: 0;
+  transition: ease-in-out;
+}
+
+@keyframes move {
+  0% {
+    -webkit-transform: rotate(30deg);
+  }
+  50% {
+    -webkit-transform: rotate(-30deg);
+  }
+  100% {
+    -webkit-transform: rotate(30deg);
+  }
+}
+
+@keyframes move2 {
+  0% {
+    -webkit-transform: rotate(-30deg);
+  }
+  50% {
+    -webkit-transform: rotate(30deg);
+  }
+  100% {
+    -webkit-transform: rotate(-30deg);
+  }
 }
