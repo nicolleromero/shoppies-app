@@ -1,10 +1,10 @@
 # <img src="public/awards.svg" width="40%">
 
-The shoppies app is a SPA built in React that facilitates users searching OMDB's site and nominating five movies to receive a Shoppie Award.
+The shoppies app is a SPA built in React that allows users to search for movies (through OMDB's end points) and nominate five movies to receive a Shoppie Award.
 
 ## About Me
 
-Prior to joining Hackbright, I was a Senior Content Strategist at an ed tech aggregator where I was responsible for driving product strategy and initiatives, including launching new online products. During my 15+ year career in ed tech, I was the Science Assessment Development Manager for the nonprofit WestEd; served as the first Content Architect at an early stage startup building apps (Inkling); and developed online products and HTML prototypes for clients such as the College Board, the Bill & Melinda Gates Foundation, and a 15-state consortium (SAIC). I hold B.S. and M.S. degrees in Biology from UC San Diego, and thrive in team environments where I can help tackle complex problems and continue to grow as a programmer.
+Hi! 👋 I'm Nicolle, a graduate from Hackbright Academy’s software engineering program and currently a software engineer intern at PagerDuty. As part of the front-end growth team, I help build and maintain the front-end for customer onboarding, checkout, and trials. We work in React and Ruby/Rails (web monolith) with modern front-end CI/CU tools (docker, gulp, github, optimiziely). Our team is focused on building streamlined customer-focused applications and constantly improving the end-user experience. I love logging in every day to collaborate with my team, tackle hard problems, learn new skills, and create UI that will be used by millions of people.
 
 ## Deployment
 
@@ -12,7 +12,6 @@ Prior to joining Hackbright, I was a Senior Content Strategist at an ed tech agg
 
 - [Tech Stack](#tech-stack)
 - [App Features](#app-features)
-- [Future Releases](#future)
 - [License](#license)
 
 ## <a name="tech-stack"></a>Technologies
@@ -33,29 +32,13 @@ Prior to joining Hackbright, I was a Senior Content Strategist at an ed tech agg
 
 ## <a name="app-features"></a>App Features
 
-![alt text](https://github.com/nicolleromero/trackspotter/blob/master/static/img/search6.gif 'trackspotter search')
+![alt text](https://github.com/nicolleromero/shoppies/public/shoppies.gif 'star wars search')
 
-- Users search by artist, album, keyword, release date (or year span), and genre where an autocomplete component provides targeted suggestions for Spotify’s 500 genres.
-- Submitted parameters and operators are aggregated and wildcards are applied to represent the query.
-- The parameters are persisted in the UI in the form of query badges and users can refine their search through directly manipulating the badges.
-- Paginated search results allow users to pull in additional tracks as they modify their query.
-- Spotify widgets (iframes) support playback of tracks. Logged in users can play full songs, and non-logged in users can play a 30-second long preview.
-- A user can continue to refine their search query, tracks can be reordered through the drag-and-drop UI built with [react-beautiful-dnd](https://github.com/atlassian/react-beautiful-dnd) or removed from the set, and the final track list can be saved as a playlist to their Spotify account.
-
-![alt text](https://github.com/nicolleromero/trackspotter/blob/master/static/img/save2.gif 'trackspotter save')
-
-- Playlists include query badges that capture the search parameters used to build the playlist.
-- Users can continue to customize their playlists after assembling tracks from their search and updates are saved to their Spotify accounts.
-- Users can also explore popular community playlists, up vote playlists, and clone and modify a popular playlist.
-- Trackspotter’s backend is written in Python, with the Flask web framework, and accesses a PostgresQL database through SQLAlchemy.
-- [Tekore](https://pypi.org/project/tekore/), a Spotify Web API client for Python 3, is leveraged to hit Spotify’s Web API endpoints from the backend to streamline the Spotify OAuth flow.
-
-## <a name="future"></a>Future Releases
-
-- Search community playlists by filtering on query parameters used to assemble the playlist.
-- Support additional operators in the searh GUI (e.g., NOT and OR).
-- Add support for sharing playlists directly from the app.
-- Add support for collaborative playlists.
+- Users can search the OMDB database to find movies they want to nominate.
+- Movie posters are animated using [React Spring](https://github.com/pmndrs/react-spring) and [React Flip Toolkit](https://github.com/aholachek/react-flip-toolkit).
+- Infinite scroll loads more movies as the user scrolls and is implemented with [React Intersection Observer](https://github.com/thebuilder/react-intersection-observer) and [React Content Loader](https://github.com/danilowoz/react-content-loader).
+- Details about a movie can be seen by clicking on the movie poster in the search results or the nominations footer.
+- Select five movies to complete your nominations!
 
 ## <a name="license"></a>License
 
