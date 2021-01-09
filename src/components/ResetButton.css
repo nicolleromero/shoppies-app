@@ -1,0 +1,22 @@
+.center-reset-button {
+  display: flex;
+  justify-content: center;
+}
+
+.reset-button {
+  height: 35px;
+  margin-top: 50px;
+  border: none;
+  background: #008060;
+  color: #fff;
+  border-radius: 3px;
+  padding: 10px;
+  transition: all 0.2s;
+  z-index: 2;
+}
+
+.reset-button:hover {
+  background: #8bca2f;
+  color: #fff;
+  cursor: pointer;
+}
