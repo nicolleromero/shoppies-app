@@ -7,6 +7,7 @@ import { nominationListState } from '../recoil/atoms';
 
 import { CallToActionBar } from './CallToActionBar';
 import { NominationsList } from './NominationsList';
+import { ResetButton } from './ResetButton';
 import { SuccessBar } from './SuccessBar';
 
 import './Footer.css';
@@ -23,6 +24,7 @@ export function Footer() {
           <>
             {list.length === MAX_NOMINATIONS && <SuccessBar />}
             <NominationsList />
+            {list.length === MAX_NOMINATIONS && <ResetButton />}
           </>
         )}
       </div>

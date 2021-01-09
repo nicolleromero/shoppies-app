@@ -12,6 +12,7 @@
 }
 
 .footer.complete {
+  top: 0;
   background-image: linear-gradient(
     -20deg,
     rgba(29, 28, 28, 0.95) 40%,
