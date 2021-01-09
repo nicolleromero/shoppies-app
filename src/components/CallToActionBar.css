@@ -7,7 +7,6 @@
   font-size: 20px;
   background-color: #004c3f;
   color: #fff;
-  backdrop-filter: blur(5px);
   /* background: linear-gradient(135deg, black 25%, transparent 25%) -50px 0,
     linear-gradient(225deg, black 25%, transparent 25%) -50px 0,
     linear-gradient(315deg, black 25%, transparent 25%),

@@ -1,21 +1,19 @@
-import { useCallback, useEffect, useLayoutEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { random } from './helpers';
 
 export function useSearchTerm() {
   const location = useLocation();
-  const query = new URLSearchParams(location.search).get('q') || '';
-  const lastQuery = useRef(query);
+  const query = new URLSearchParams(location.search).get('q');
 
-  // Prevent repositining of header coomponents on homepage
-  useLayoutEffect(() => {
-    if (query) {
-      lastQuery.current = query;
-    }
-  }, [query]);
+  return query || '';
+}
 
-  return location.pathname === '/' ? query : lastQuery.current;
+export function useHomepagePath() {
+  const searchTerm = useSearchTerm();
+
+  return searchTerm ? `/?q=${encodeURIComponent(searchTerm)}` : '/';
 }
 
 // Credit to: https://www.joshwcomeau.com/react/animated-sparkles-in-react/

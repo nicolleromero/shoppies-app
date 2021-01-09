@@ -1,9 +1,11 @@
-import React, { Suspense } from 'react';
-import { Redirect } from 'react-router-dom';
+import React, { Suspense, useLayoutEffect, useRef } from 'react';
+import { Redirect, RouteChildrenProps, useHistory } from 'react-router-dom';
+import ReactModal from 'react-modal';
 import { useRecoilValue } from 'recoil';
 
 import { omdbMovieDetails } from '../recoil/selectors';
 import { nominationListState } from '../recoil/atoms';
+import { useHomepagePath } from '../utils/hooks';
 import { DismissButton } from './DismissButton';
 import { ErrorBoundary } from './ErrorBoundary';
 import { NominateButton } from './NominateButton';
@@ -13,32 +15,51 @@ import { Ratings } from './Ratings';
 import './MovieDetailsModal.css';
 
 type Props = {
-  match: any;
+  isOpen: boolean;
+  movieId: string | null;
 };
 
-export function MovieDetailsModal(props: Props) {
+export function MovieDetailsModal(props: RouteChildrenProps<{ id: string }>) {
+  const movieId = props.match?.params.id;
+  const movieIdRef = useRef<string | null>(null);
+  const isOpen = movieId != null;
+
+  useLayoutEffect(() => {
+    if (movieId) {
+      movieIdRef.current = movieId;
+    }
+  }, [movieId]);
+
   return (
     <ErrorBoundary fallback={<Redirect to="/" />}>
       <Suspense fallback={<MovieDetailsModalFallback />}>
-        <MovieDetailsModalContent {...props} />
+        <MovieDetailsModalContent isOpen={isOpen} movieId={movieId || movieIdRef.current} />
       </Suspense>
     </ErrorBoundary>
   );
 }
 
 function MovieDetailsModalContent(props: Props) {
-  const movieId = props.match.params.id;
+  const { isOpen, movieId } = props;
+  const history = useHistory();
+  const homepagePath = useHomepagePath();
   const movie = useRecoilValue(omdbMovieDetails(movieId));
   const nominationsList = useRecoilValue(nominationListState);
   const nominated = nominationsList.some((obj) => obj.id === movieId);
 
   if (!movie) {
     // Redirect to homepage if movie details not found
-    return <Redirect to="/" />;
+    return <Redirect to={homepagePath} />;
   }
 
   return (
-    <div className="modal">
+    <ReactModal
+      className="modal"
+      closeTimeoutMS={300}
+      isOpen={isOpen}
+      overlayClassName="overlay"
+      onRequestClose={() => history.push(homepagePath)}
+    >
       {nominated && (
         <div className="ribbon ribbon-top-right">
           <span>NOMINATED</span>
@@ -84,7 +105,7 @@ function MovieDetailsModalContent(props: Props) {
           </div>
         </div>
       </div>
-    </div>
+    </ReactModal>
   );
 }
 

@@ -1,16 +1,14 @@
 import { useHistory } from 'react-router-dom';
-import { useSearchTerm } from '../utils/hooks';
+import { useHomepagePath } from '../utils/hooks';
 
 import './DismissButton.css';
 
 export function DismissButton() {
-  const searchTerm = useSearchTerm();
+  const path = useHomepagePath();
   const history = useHistory();
 
-  console.log('SearchTerm', searchTerm);
-
   function handleClick() {
-    history.push(`/?q=${encodeURIComponent(searchTerm)}`);
+    history.push(path);
   }
 
   return (

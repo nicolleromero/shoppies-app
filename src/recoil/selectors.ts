@@ -25,5 +25,5 @@ export const filteredSearchQuery = selectorFamily({
 
 export const omdbMovieDetails = selectorFamily({
   key: 'omdbMovieDetails',
-  get: (id: string) => () => getMovieDetails(id),
+  get: (id: string | null) => () => (id ? getMovieDetails(id) : null),
 });

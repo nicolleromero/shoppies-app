@@ -16,8 +16,10 @@ export default function App() {
         <Header />
         <MovieList />
       </div>
+
       <Footer />
-      <Route path="/movie/:id" component={MovieDetailsModal} />
+
+      <Route path="/movie/:id">{(props) => <MovieDetailsModal {...props} />}</Route>
     </FlipRoot>
   );
 }
