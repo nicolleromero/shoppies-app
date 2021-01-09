@@ -4,6 +4,7 @@ const API_KEY = '7030d0e8';
 const SEARCH_URL = 'https://www.omdbapi.com';
 
 interface SearchData {
+  Error?: string;
   Search: SearchMovie[];
 }
 
@@ -15,6 +16,7 @@ interface SearchMovie {
 }
 
 interface SearchMovieDetails extends SearchMovie {
+  Error?: string;
   Rated: string;
   Released: string;
   Runtime: string;
@@ -50,14 +52,14 @@ export interface Movie {
 }
 
 export interface MovieDetails extends Movie {
-  rated: string;
-  released: string;
-  runtime: string;
-  genre: string;
-  director: string;
-  writer: string;
-  actors: string;
-  plot: string;
+  rated?: string;
+  released?: string;
+  runtime?: string;
+  genre?: string;
+  director?: string;
+  writer?: string;
+  actors?: string;
+  plot?: string;
   language: string;
   country: string;
   awards: string;
@@ -89,14 +91,7 @@ async function omdbAPICall(params: Record<string, string>) {
     throw new Error(message);
   }
 
-  const data = await response.json();
-
-  if (data.Error) {
-    console.error(data.Error);
-    throw new Error(data.Error);
-  }
-
-  return data;
+  return await response.json();
 }
 
 export const getSearchResults = memoize(
@@ -132,7 +127,8 @@ export const getMovieDetails = memoize(
     const params = { i: id, plot: 'full' };
     const data: SearchMovieDetails = await omdbAPICall(params);
 
-    if (!data) {
+    if (data.Error) {
+      console.error(data.Error);
       return null;
     }
 
@@ -143,14 +139,14 @@ export const getMovieDetails = memoize(
       id: data.imdbID,
       title: data.Title,
       year: data.Year,
-      rated: data.Rated,
-      released: data.Released,
-      runtime: data.Runtime,
-      genre: data.Genre,
-      director: data.Director,
-      writer: data.Writer,
-      actors: data.Actors,
-      plot: data.Plot,
+      rated: data.Rated !== 'N/A' ? data.Rated : undefined,
+      released: data.Released !== 'N/A' ? data.Released : undefined,
+      runtime: data.Runtime !== 'N/A' ? data.Runtime : undefined,
+      genre: data.Genre !== 'N/A' ? data.Genre : undefined,
+      director: data.Director !== 'N/A' ? data.Director : undefined,
+      writer: data.Writer !== 'N/A' ? data.Writer : undefined,
+      actors: data.Actors !== 'N/A' ? data.Actors : undefined,
+      plot: data.Plot !== 'N/A' ? data.Plot : undefined,
       language: data.Language,
       country: data.Country,
       awards: data.Awards,

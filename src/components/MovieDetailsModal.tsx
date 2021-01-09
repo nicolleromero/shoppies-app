@@ -33,7 +33,8 @@ function MovieDetailsModalContent(props: Props) {
   const nominated = nominationsList.some((obj) => obj.id === movieId);
 
   if (!movie) {
-    return null;
+    // Redirect to homepage if movie details not found
+    return <Redirect to="/" />;
   }
 
   return (
@@ -60,18 +61,26 @@ function MovieDetailsModalContent(props: Props) {
         <Ratings movie={movie} />
         <div>
           <div className="plot">
-            <p>
-              <strong>Summary:</strong> {movie.plot}
-            </p>
-            <p>
-              <strong>Director:</strong> {movie.director}
-            </p>
-            <p>
-              <strong>Writer:</strong> {movie.writer}
-            </p>
-            <p>
-              <strong>Actors:</strong> {movie.actors}
-            </p>
+            {movie.plot && (
+              <p>
+                <strong>Summary:</strong> {movie.plot}
+              </p>
+            )}
+            {movie.director && (
+              <p>
+                <strong>Director:</strong> {movie.director}
+              </p>
+            )}
+            {movie.writer && (
+              <p>
+                <strong>Writer:</strong> {movie.writer}
+              </p>
+            )}
+            {movie.actors && (
+              <p>
+                <strong>Actors:</strong> {movie.actors}
+              </p>
+            )}
           </div>
         </div>
       </div>

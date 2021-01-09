@@ -16,8 +16,10 @@ type Props = {
 };
 
 export function MoviePage(props: Props) {
+  const { page } = props;
+
   return (
-    <ErrorBoundary fallback={<Redirect to="/" />}>
+    <ErrorBoundary fallback={page === 1 ? <Redirect to="/" /> : null}>
       <Suspense fallback={<MoviePageFallback />}>
         <MoviePageContent {...props} />
       </Suspense>
