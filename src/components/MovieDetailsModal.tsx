@@ -77,7 +77,7 @@ function MovieDetailsModalContent(props: Props) {
             {movie.title} <span className="year">({movie.year})</span>
           </h2>
           <div className="supporting-details">
-            {movie.rated} | {movie.runtime} | {movie.genre} | {movie.released}
+            {[movie.rated, movie.runtime, movie.genre, movie.released].filter(Boolean).join(' | ')}
           </div>
         </div>
         <Ratings movie={movie} />
