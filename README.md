@@ -4,17 +4,17 @@
 
 #### <div align="center">Shoppies is a single-page web app built in React that lets users search for movies using [OMDB'S API](https://www.omdbapi.com/) and nominate five movies to receive a Shoppie Award!</div>
 
-# <div align="center"><img src="public/demo_intro.gif" width="25%"></div>
-
 ### Start of app
 
-# <div align="center"><img src="public/demo_nominate.gif" width="25%"></div>
+# <div align="center"><img src="public/demo_intro.gif" width="100%"></div>
 
 ### Nominating movies
 
-# <div align="center"><img src="public/demo_final.gif" width="25%"></div>
+# <div align="center"><img src="public/demo_nominate.gif" width="100%"></div>
 
 ### Nominations complete
+
+# <div align="center"><img src="public/demo_final.gif" width="100%"></div>
 
 ## Contents
 
