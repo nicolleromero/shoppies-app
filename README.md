@@ -4,15 +4,21 @@
 
 #### <div align="center">Shoppies is a single-page web app built in React that lets users search for movies using [OMDB'S API](https://www.omdbapi.com/) and nominate five movies to receive a Shoppie Award!</div>
 
-### Start of app
+---
+
+### <div align="center">Start of app</div>
 
 # <div align="center"><img src="public/demo_intro.gif" width="100%"></div>
 
-### Nominating movies
+---
+
+### <div align="center">Nominating movies</div>
 
 # <div align="center"><img src="public/demo_nominate.gif" width="100%"></div>
 
-### Nominations complete
+### <div align="center">Nominations complete</div>
+
+---
 
 # <div align="center"><img src="public/demo_final.gif" width="100%"></div>
 
@@ -49,9 +55,9 @@
 - Infinite scroll loads additional movies as the user scrolls and is implemented with [React Intersection Observer](https://github.com/thebuilder/react-intersection-observer) and [React Content Loader](https://github.com/danilowoz/react-content-loader).
 - Movie details are provided in an accessible modal using [React Modal](https://github.com/reactjs/react-modal) and can be seen by clicking on a movie poster in the search results or the nominations footer.
 - A user's nominations are saved in local storage so results will persist even if they leave the page.
-- [Recoil](https://recoiljs.org/) is an experimental state management library for React that offers an orthogonal approach to managing state. Selectors are used to handle asynchronous data fetching from the OMDB API.
+- [Recoil](https://recoiljs.org/) is an experimental state management library for React that offers an orthogonal approach to managing state. Selectors are used to handle asynchronous data fetching using OMDB's API.
 - [Jest Testing Framework](https://jestjs.io/docs/en/tutorial-react) is used to test the end-to-end functioning of the app.
-- Semantic markup and aria labels are used to maintain the app's accessibility (and tested in Lighthouse and Axe).
+- Semantic markup and aria labels are used to support broader accessibility (and tested in Lighthouse and Axe).
 - Select five movies to complete your nominations! 🎉
 
 ## <a name="future-improvements"></a>Future Improvements
