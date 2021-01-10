@@ -3,19 +3,49 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background-image: linear-gradient(
-    -20deg,
-    rgb(255, 255, 255, 0.95) 40%,
-    rgb(116, 114, 114, 0.95) 100%
-  );
   backdrop-filter: blur(5px);
 }
 
 .footer.complete {
   top: 0;
+}
+
+/* Crossfade source: https://keithjgrant.com/posts/2017/07/transitioning-gradients/ */
+
+.footer::before,
+.footer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  transition: opacity 300ms linear;
+}
+
+.footer::before {
+  background-image: linear-gradient(
+    -20deg,
+    rgb(255, 255, 255, 0.95) 40%,
+    rgb(116, 114, 114, 0.95) 100%
+  );
+  opacity: 1;
+}
+
+.footer::after {
   background-image: linear-gradient(
     -20deg,
     rgba(29, 28, 28, 0.95) 40%,
     rgba(24, 22, 22, 0.95) 100%
   );
+  opacity: 0;
+}
+
+.footer.complete::before {
+  opacity: 0;
+}
+
+.footer.complete::after {
+  opacity: 1;
 }

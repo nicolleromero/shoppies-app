@@ -1,11 +1,5 @@
 /* Spotlight animations from https://codepen.io/caseymhunt/pen/honFp */
 
-.spot1 {
-  animation: move 5s infinite;
-}
-.spot2 {
-  animation: move2 5s infinite;
-}
 .spotlight {
   position: absolute;
   left: 50%;
@@ -20,7 +14,15 @@
   transition: ease-in-out;
 }
 
-@keyframes move {
+.spotlight.spotlight-1 {
+  animation: spotlight-1-move 7s infinite;
+}
+
+.spotlight.spotlight-2 {
+  animation: spotlight-2-move 7s infinite;
+}
+
+@keyframes spotlight-1-move {
   0% {
     transform: rotate(30deg);
   }
@@ -32,7 +34,7 @@
   }
 }
 
-@keyframes move2 {
+@keyframes spotlight-2-move {
   0% {
     transform: rotate(-40deg);
   }

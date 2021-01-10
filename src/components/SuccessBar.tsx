@@ -6,7 +6,7 @@ export function SuccessBar() {
   return (
     <div className="success-bar">
       <p className="success-text">
-        Congratulations! You've completed your nominations!<span className="star">💫</span>
+        You've completed your nominations!<span className="star">💫</span>
       </p>
       <Spotlights />
     </div>
