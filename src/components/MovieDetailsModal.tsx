@@ -1,4 +1,4 @@
-import React, { Suspense, useLayoutEffect, useRef } from 'react';
+import React, { Suspense, useEffect, useRef } from 'react';
 import { Redirect, RouteChildrenProps, useHistory } from 'react-router-dom';
 import ReactModal from 'react-modal';
 import { useRecoilValue } from 'recoil';
@@ -24,7 +24,8 @@ export function MovieDetailsModal(props: RouteChildrenProps<{ id: string }>) {
   const movieIdRef = useRef<string | null>(null);
   const isOpen = movieId != null;
 
-  useLayoutEffect(() => {
+  // Store movieId in movieIdRef to allow modal to fade out when closed
+  useEffect(() => {
     if (movieId) {
       movieIdRef.current = movieId;
     }
@@ -55,7 +56,7 @@ function MovieDetailsModalContent(props: Props) {
   return (
     <ReactModal
       className="modal"
-      closeTimeoutMS={300}
+      closeTimeoutMS={400}
       isOpen={isOpen}
       overlayClassName="overlay"
       onRequestClose={() => history.push(homepagePath)}

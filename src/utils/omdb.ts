@@ -124,7 +124,7 @@ export const getMovieDetails = memoize(
       return null;
     }
 
-    const params = { i: id, plot: 'full' };
+    const params = { i: id, plot: 'short' };
     const data: SearchMovieDetails = await omdbAPICall(params);
 
     if (data.Error) {

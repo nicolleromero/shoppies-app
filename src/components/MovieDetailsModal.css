@@ -13,7 +13,7 @@
 
 .overlay.ReactModal__Overlay {
   opacity: 0;
-  transition: opacity 300ms ease-in-out;
+  transition: opacity 400ms ease-in-out;
 }
 
 .overlay.ReactModal__Overlay--after-open {
