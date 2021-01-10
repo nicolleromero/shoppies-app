@@ -2,7 +2,11 @@
 
 # <div align="center"><img src="public/awards.svg" width="25%"></div>
 
-#### <div align="center">Shoppies is a single-page web app built in React that lets users search for movies using [OMDB'S API](https://www.omdbapi.com/) and nominate five movies to receive a Shoppie Award!</div>
+## About
+
+> Shoppies is a single-page web app built in React that lets users search for movies using [OMDB'S API](https://www.omdbapi.com/) and nominate five movies to receive a Shoppie Award!</div>
+
+![APM](https://img.shields.io/apm/l/npm)
 
 ---
 
@@ -27,7 +31,7 @@
 - [Tech Stack](#tech-stack)
 - [App Features](#app-features)
 - [Future Improvements](#future-improvements)
-- [About Me](#about-me)
+- [About The Developer](#about-me)
 - [Deployment](#deployment)
 - [License](#license)
 
@@ -66,13 +70,15 @@
 - Add improvements for mobile.
 - Support users creating sharable links.
 
-## <a name="about-me"></a>About Me
+## <a name="about-me"></a>About The Developer
 
 Hi! 👋 I'm Nicolle, a graduate from Hackbright Academy’s software engineering program and currently a software engineer intern at PagerDuty. As part of the front-end growth team, I help build and maintain the front-end for customer onboarding, checkout, and growth trials. We work in React/Redux and Ruby/Rails (web monolith) with modern front-end CI/CU tools (docker, gulp, GitHub, Optimizely). Our team is focused on building streamlined customer-focused applications and constantly improving the end-user experience. I love logging in every day to collaborate with my team, tackle hard problems, learn new skills, and create UI that will be used by millions of people.
 
 ## <a name="deployment"></a>Deployment
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+<details><summary><b>Show instructions</b></summary>
 
 ### Available Scripts
 
@@ -126,6 +132,8 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/ad
 #### Deployment
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+
+</details>
 
 ## <a name="license"></a>License
 
