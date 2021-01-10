@@ -1,5 +1,5 @@
 import React, { Suspense, useEffect, useRef } from 'react';
-import { Redirect, RouteChildrenProps, useHistory } from 'react-router-dom';
+import { Redirect, useHistory, useLocation } from 'react-router-dom';
 import ReactModal from 'react-modal';
 import { useRecoilValue } from 'recoil';
 
@@ -19,10 +19,11 @@ type Props = {
   movieId: string | null;
 };
 
-export function MovieDetailsModal(props: RouteChildrenProps<{ id: string }>) {
-  const movieId = props.match?.params.id;
-  const movieIdRef = useRef<string | null>(null);
-  const isOpen = movieId != null;
+export function MovieDetailsModal() {
+  const location = useLocation();
+  const movieId = new URLSearchParams(location.search).get('movie');
+  const movieIdRef = useRef(movieId);
+  const isOpen = !!movieId;
 
   // Store movieId in movieIdRef to allow modal to fade out when closed
   useEffect(() => {

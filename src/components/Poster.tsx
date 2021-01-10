@@ -56,7 +56,7 @@ export function Poster({
     <Flipped flipId={movie.id}>
       {clickable ? (
         <Link
-          to={`/movie/${movie.id}?q=${encodeURIComponent(searchTerm)}`}
+          to={`/?q=${encodeURIComponent(searchTerm)}&movie=${encodeURIComponent(movie.id)}`}
           className="poster"
           data-tip={tip}
         >

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
 
 import { FlipRoot } from './FlipRoot';
 import { Footer } from './Footer';
@@ -21,7 +20,7 @@ export default function App() {
 
       <Footer />
 
-      <Route path="/movie/:id">{(props) => <MovieDetailsModal {...props} />}</Route>
+      <MovieDetailsModal />
     </FlipRoot>
   );
 }
