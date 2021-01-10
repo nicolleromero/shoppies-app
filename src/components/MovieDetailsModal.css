@@ -34,6 +34,12 @@
   outline: none;
 }
 
+@media screen and (max-width: 600px) {
+  .modal {
+    flex-wrap: wrap;
+  }
+}
+
 .modal .column {
   justify-content: center;
   padding: 0 10px;
@@ -55,6 +61,10 @@
   font-size: 28px;
   font-weight: bold;
   margin: 0;
+}
+
+.nominated .title {
+  padding-right: 50px;
 }
 
 .movie-details .year {

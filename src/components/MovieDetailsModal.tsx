@@ -55,7 +55,7 @@ function MovieDetailsModalContent(props: Props) {
 
   return (
     <ReactModal
-      className="modal"
+      className={nominated ? 'nominated modal' : 'modal'}
       closeTimeoutMS={400}
       isOpen={isOpen}
       overlayClassName="overlay"
