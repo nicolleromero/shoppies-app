@@ -11,23 +11,32 @@ type Props = {
   color?: string;
   children?: React.ReactNode;
   className?: string;
+  disabled?: boolean;
 };
 
-export function Sparkles({ color = DEFAULT_COLOR, children, className = '', ...props }: Props) {
+export function Sparkles({
+  color = DEFAULT_COLOR,
+  children,
+  className = '',
+  disabled = false,
+  ...props
+}: Props) {
   const [sparkles, setSparkles] = useState(() => {
     return range(3).map(() => generateSparkle(color));
   });
 
   useRandomInterval(
     () => {
-      const sparkle = generateSparkle(color);
-      const now = Date.now();
-      const nextSparkles = sparkles.filter((sp) => {
-        const delta = now - sp.createdAt;
-        return delta < 750;
-      });
-      nextSparkles.push(sparkle);
-      setSparkles(nextSparkles);
+      if (!disabled) {
+        const sparkle = generateSparkle(color);
+        const now = Date.now();
+        const nextSparkles = sparkles.filter((sp) => {
+          const delta = now - sp.createdAt;
+          return delta < 750;
+        });
+        nextSparkles.push(sparkle);
+        setSparkles(nextSparkles);
+      }
     },
     50,
     450,
@@ -36,9 +45,16 @@ export function Sparkles({ color = DEFAULT_COLOR, children, className = '', ...p
   return (
     <div className={`sparkle-wrapper ${className}`} {...props}>
       {children}
-      {sparkles.map((sparkle) => (
-        <Sparkle key={sparkle.id} color={sparkle.color} size={sparkle.size} style={sparkle.style} />
-      ))}
+
+      {!disabled &&
+        sparkles.map((sparkle) => (
+          <Sparkle
+            key={sparkle.id}
+            color={sparkle.color}
+            size={sparkle.size}
+            style={sparkle.style}
+          />
+        ))}
     </div>
   );
 }

@@ -25,12 +25,12 @@ export function NominateButton(props: Props) {
     setHiddenList((hiddenList) => [...hiddenList, movieId]);
   }
 
-  if (!nominated && nominationsList.length === MAX_NOMINATIONS) {
+  if (nominated && nominationsList.length === MAX_NOMINATIONS) {
     return null;
   }
 
   return (
-    <Sparkles className="nominate-button">
+    <Sparkles disabled={nominated} className="nominate-button">
       <button disabled={nominated} onClick={handleNominate}>
         {nominated ? 'Nominated' : 'Nominate!'}
       </button>
