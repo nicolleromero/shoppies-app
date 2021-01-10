@@ -15,7 +15,7 @@ export function Header() {
           <img className="awards" alt="scene of awards ceremony" src="/awards.svg" />
         </Flipped>
         <Flipped flipId="title">
-          <h2 className="title">the shoppies</h2>
+          <h1 className="title">the shoppies</h1>
         </Flipped>
       </div>
       <Flipped flipId="search-input">
