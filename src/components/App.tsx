@@ -7,11 +7,9 @@ import { MovieDetailsModal } from './MovieDetailsModal';
 import { GithubCorner } from './GithubCorner';
 import { MovieList } from './MovieList';
 
-import './App.css';
-
 export default function App() {
   return (
-    <FlipRoot className="site-wrapper">
+    <FlipRoot>
       <GithubCorner />
       <div>
         <Header />
