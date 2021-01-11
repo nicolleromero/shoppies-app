@@ -1,12 +1,12 @@
 import React, { Suspense, useEffect, useRef } from 'react';
-import { Redirect, useHistory, useLocation } from 'react-router-dom';
+import { Redirect, useHistory } from 'react-router-dom';
 import ReactModal from 'react-modal';
 import { useRecoilValue } from 'recoil';
 
 import { MAX_NOMINATIONS } from '../constants';
 import { omdbMovieDetails } from '../recoil/selectors';
 import { nominationListState } from '../recoil/atoms';
-import { useHomepagePath } from '../utils/hooks';
+import { useHomepagePath, useSelectedMovieId } from '../utils/hooks';
 import { DismissButton } from './DismissButton';
 import { ErrorBoundary } from './ErrorBoundary';
 import { NominateButton } from './NominateButton';
@@ -22,8 +22,7 @@ type Props = {
 };
 
 export function MovieDetailsModal() {
-  const location = useLocation();
-  const movieId = new URLSearchParams(location.search).get('movie');
+  const movieId = useSelectedMovieId();
   const movieIdRef = useRef(movieId);
   const nominationsList = useRecoilValue(nominationListState);
   const isOpen = !!movieId && nominationsList.length < MAX_NOMINATIONS;

@@ -10,6 +10,13 @@ export function useSearchTerm() {
   return query || '';
 }
 
+export function useSelectedMovieId() {
+  const location = useLocation();
+  const movieId = new URLSearchParams(location.search).get('movie');
+
+  return movieId || '';
+}
+
 export function useHomepagePath() {
   const searchTerm = useSearchTerm();
 

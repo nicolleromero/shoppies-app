@@ -13,6 +13,7 @@ type Props = {
   children?: React.ReactNode;
   clickable?: boolean;
   empty?: boolean;
+  flipId?: string;
   movie?: Movie;
   tooltip?: boolean;
 };
@@ -34,6 +35,7 @@ export function Poster({
   children,
   clickable = true,
   empty = false,
+  flipId,
   movie,
   tooltip = false,
 }: Props) {
@@ -53,7 +55,7 @@ export function Poster({
 
   // Change flipId when showing details so there is an animation.
   return (
-    <Flipped flipId={movie.id}>
+    <Flipped flipId={flipId || movie.id}>
       {clickable ? (
         <Link
           to={`/?q=${encodeURIComponent(searchTerm)}&movie=${encodeURIComponent(movie.id)}`}

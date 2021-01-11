@@ -82,7 +82,7 @@ function generateSparkle(color: string) {
   const size = random(10, 20);
 
   return {
-    id: String(random(10000, 99999)),
+    id: String(random(1000000, 9999999)),
     createdAt: Date.now(),
     color,
     size,
