@@ -1,8 +1,9 @@
 .ratings {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
-  margin: 15px;
+  margin: 10px;
 }
 
 .ratings-score {
@@ -10,6 +11,7 @@
   align-items: center;
   flex: 1;
   font-size: 18px;
+  margin: 5px;
 }
 
 .ratings-score span {
