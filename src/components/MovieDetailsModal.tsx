@@ -12,6 +12,7 @@ import { ErrorBoundary } from './ErrorBoundary';
 import { NominateButton } from './NominateButton';
 import { Poster } from './Poster';
 import { Ratings } from './Ratings';
+import { Ribbon } from './Ribbon';
 
 import './MovieDetailsModal.css';
 
@@ -64,11 +65,7 @@ function MovieDetailsModalContent(props: Props) {
       overlayClassName="overlay"
       onRequestClose={() => history.push(homepagePath)}
     >
-      {nominated && (
-        <div className="ribbon ribbon-top-right">
-          <span>NOMINATED</span>
-        </div>
-      )}
+      {nominated && <Ribbon />}
       <div className="column">
         <div className="movie-details">
           <h2 className="title">
