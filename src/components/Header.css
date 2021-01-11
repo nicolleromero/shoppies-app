@@ -3,6 +3,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-image: linear-gradient(rgb(210, 210, 210) 0%, #fff 50%);
 }
 
 .header .title {
@@ -38,6 +39,7 @@
   align-items: center;
   flex-direction: row;
   justify-content: flex-start;
+  background-image: linear-gradient(rgb(210, 210, 210) 0%, #fff 100%);
 }
 
 .center-children-shift .side-item {
@@ -69,10 +71,20 @@
     margin: 10px;
   }
 
+  .header .title {
+    font-size: 45px;
+  }
+
+  .center-children-shift .title {
+    font-size: 32px;
+    margin-left: 15px;
+  }
+
   .awards {
-    margin-top: 10px;
-    margin-bottom: 5px;
-    width: 35%;
-    text-align: center;
+    width: 150px;
+  }
+
+  .center-children-shift .awards {
+    width: 50px;
   }
 }
