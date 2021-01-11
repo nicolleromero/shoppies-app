@@ -18,7 +18,7 @@ export function NominationsList() {
 
   if (list.length === 5) {
     return (
-      <div className="nominations-footer">
+      <div className="nominations-list">
         {list.map((movie) => {
           return (
             <Sparkles>
@@ -31,7 +31,7 @@ export function NominationsList() {
   }
 
   return (
-    <div className="nominations-footer">
+    <div className="nominations-list">
       {list.map((movie) => {
         return <NominatedMovie movie={movie} key={movie.id} />;
       })}
