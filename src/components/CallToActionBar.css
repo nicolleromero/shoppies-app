@@ -10,6 +10,13 @@
   opacity: 0.95;
 }
 
+@media (max-width: 600px) {
+  .call-to-action-bar {
+    font-size: 18px;
+    padding: 5px;
+  }
+}
+
 .call-to-action-bar .number {
   color: #93d030;
   font-style: bold;
