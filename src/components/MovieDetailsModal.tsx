@@ -3,6 +3,7 @@ import { Redirect, useHistory, useLocation } from 'react-router-dom';
 import ReactModal from 'react-modal';
 import { useRecoilValue } from 'recoil';
 
+import { MAX_NOMINATIONS } from '../constants';
 import { omdbMovieDetails } from '../recoil/selectors';
 import { nominationListState } from '../recoil/atoms';
 import { useHomepagePath } from '../utils/hooks';
@@ -23,7 +24,8 @@ export function MovieDetailsModal() {
   const location = useLocation();
   const movieId = new URLSearchParams(location.search).get('movie');
   const movieIdRef = useRef(movieId);
-  const isOpen = !!movieId;
+  const nominationsList = useRecoilValue(nominationListState);
+  const isOpen = !!movieId && nominationsList.length < MAX_NOMINATIONS;
 
   // Store movieId in movieIdRef to allow modal to fade out when closed
   useEffect(() => {
@@ -68,11 +70,6 @@ function MovieDetailsModalContent(props: Props) {
         </div>
       )}
       <div className="column">
-        <DismissButton />
-        <Poster clickable={false} movie={movie}></Poster>
-        <NominateButton movie={movie} />
-      </div>
-      <div className="column">
         <div className="movie-details">
           <h2 className="title">
             {movie.title} <span className="year">({movie.year})</span>
@@ -106,6 +103,11 @@ function MovieDetailsModalContent(props: Props) {
             )}
           </div>
         </div>
+      </div>
+      <div className="column">
+        <DismissButton />
+        <Poster clickable={false} movie={movie}></Poster>
+        <NominateButton allowUnnominate={true} movie={movie} />
       </div>
     </ReactModal>
   );
