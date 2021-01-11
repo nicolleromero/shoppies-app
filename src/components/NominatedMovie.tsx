@@ -15,7 +15,7 @@ type Props = {
 
 export function NominatedMovie(props: Props) {
   const setHiddenList = useSetRecoilState(hiddenListState);
-  const setNominationList = useSetRecoilState(nominationListState);
+  const setNominationsList = useSetRecoilState(nominationListState);
   const { movie } = props;
   const movieId = movie?.id;
 
@@ -25,7 +25,7 @@ export function NominatedMovie(props: Props) {
 
   function handleUnnominateMovie() {
     setHiddenList((hiddenList) => hiddenList.filter((id) => id !== movieId));
-    setNominationList((nominationList) => nominationList.filter(({ id }) => id !== movieId));
+    setNominationsList((nominationList) => nominationList.filter(({ id }) => id !== movieId));
   }
 
   return (
