@@ -65,6 +65,7 @@ function MovieDetailsModalContent(props: Props) {
       onRequestClose={() => history.push(homepagePath)}
     >
       {nominated && <Ribbon />}
+
       <div className="column">
         <div className="movie-details">
           <h2 className="title">
@@ -100,6 +101,7 @@ function MovieDetailsModalContent(props: Props) {
           </div>
         </div>
       </div>
+
       <div className="column">
         <DismissButton />
         <Poster clickable={false} movie={movie}></Poster>

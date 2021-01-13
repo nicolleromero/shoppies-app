@@ -20,9 +20,7 @@ type Props = {
 export function MovieCard(props: Props) {
   const { movie, onIntersect } = props;
   const setHiddenList = useSetRecoilState(hiddenListState);
-  const { ref, inView } = useInView({
-    threshold: 0,
-  });
+  const { ref, inView } = useInView();
 
   useEffect(() => {
     if (inView && onIntersect) {
@@ -50,7 +48,7 @@ export function MovieCard(props: Props) {
   return (
     <div className="movie" role="listitem" data-testid={movie.title} ref={ref}>
       <Poster movie={movie}>
-        <DeleteButton movie={movie} onClick={handleHideMovie} />
+        <DeleteButton onClick={handleHideMovie} />
         <NominateButton movie={movie} />
       </Poster>
       <div className="movie-title">

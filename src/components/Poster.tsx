@@ -7,6 +7,8 @@ import { useSpring, animated } from 'react-spring';
 import { useSearchTerm } from '../utils/hooks';
 import { Movie } from '../utils/omdb';
 
+import moviePoster from '../images/movie-poster.png';
+
 import './Poster.css';
 
 type Props = {
@@ -20,16 +22,18 @@ type Props = {
 
 type XYS = readonly [number, number, number];
 
-const calc = (element: HTMLElement, x: number, y: number): XYS => {
+// Credit for 3D card effect: https://codesandbox.io/embed/rj998k4vmm
+function getXYS(element: HTMLElement, x: number, y: number): XYS {
   const rect = element.getBoundingClientRect();
   y -= rect.y;
   x -= rect.x;
 
-  return [-(y - rect.height / 2) / 20, (x - rect.width / 2) / 20, 1.04];
-};
+  return [-(y - rect.height / 2) / 25, (x - rect.width / 2) / 25, 1.04];
+}
 
-const trans = (x: number, y: number, s: number) =>
-  `perspective(1000px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
+function getTransform(x: number, y: number, s: number) {
+  return `perspective(1000px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
+}
 
 export function Poster({
   children,
@@ -50,7 +54,7 @@ export function Poster({
     return <div className={`poster ${empty ? 'empty' : ''}`}>{!empty && <PosterGlimmer />}</div>;
   }
 
-  const src = movie.image !== 'N/A' ? movie.image : '/movie_poster.png';
+  const src = movie.image !== 'N/A' ? movie.image : moviePoster;
   const tip = tooltip ? `${movie.title} (${movie.year})` : undefined;
 
   // Change flipId when showing details so there is an animation.
@@ -65,10 +69,10 @@ export function Poster({
           <animated.div
             className="poster-inner"
             onMouseMove={(event) =>
-              set({ xys: calc(event.currentTarget, event.clientX, event.clientY) })
+              set({ xys: getXYS(event.currentTarget, event.clientX, event.clientY) })
             }
             onMouseLeave={() => set({ xys: [0, 0, 1] })}
-            style={{ transform: springProps.xys.interpolate(trans as any) }}
+            style={{ transform: springProps.xys.interpolate(getTransform as any) }}
           >
             <img src={src} alt={movie.title} />
             {children}

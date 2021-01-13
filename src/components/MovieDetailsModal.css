@@ -36,6 +36,22 @@
   outline: none;
 }
 
+.modal.ReactModal__Content {
+  opacity: 0;
+  transform: scale(0.75);
+  transition: opacity 400ms ease-in-out, transform 400ms ease-in-out;
+}
+
+.modal.ReactModal__Content--after-open {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.modal.ReactModal__Content--before-close {
+  opacity: 0;
+  transform: scale(0.75);
+}
+
 @media screen and (max-width: 600px) {
   .modal {
     flex-direction: column;
