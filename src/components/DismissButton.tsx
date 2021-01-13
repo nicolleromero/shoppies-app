@@ -1,5 +1,7 @@
 import { useHistory } from 'react-router-dom';
+
 import { useHomepagePath } from '../utils/hooks';
+import { DeleteButton } from './DeleteButton';
 
 import './DismissButton.css';
 
@@ -11,9 +13,5 @@ export function DismissButton() {
     history.push(path);
   }
 
-  return (
-    <button className="dismiss-button" onClick={handleClick}>
-      ✕
-    </button>
-  );
+  return <DeleteButton className="dismiss-button" onClick={handleClick} />;
 }

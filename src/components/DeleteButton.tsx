@@ -1,22 +1,22 @@
-import { Movie } from '../utils/omdb';
-
 import './DeleteButton.css';
 
 type Props = {
-  movie: Movie;
+  className?: string;
   onClick: () => void;
 };
 
 export function DeleteButton(props: Props) {
+  const { className = '', onClick } = props;
+
   function handleClick(event: React.MouseEvent<HTMLButtonElement>) {
     // Prevent showing movie details.
     event.preventDefault();
 
-    props.onClick();
+    onClick();
   }
 
   return (
-    <button className="delete-button" onClick={handleClick}>
+    <button className={`delete-button ${className}`} onClick={handleClick}>
       ✕
     </button>
   );
