@@ -3,7 +3,7 @@ import { useSetRecoilState } from 'recoil';
 import { useHistory } from 'react-router-dom';
 
 import { hiddenListState } from '../recoil/atoms';
-import { useSearchTerm } from '../utils/hooks';
+import { useBasePath, useSearchTerm } from '../utils/hooks';
 
 import './Search.css';
 
@@ -11,6 +11,8 @@ export function Search() {
   const setHiddenList = useSetRecoilState(hiddenListState);
   const searchTerm = useSearchTerm();
   const [value, setValue] = useState(searchTerm);
+  const normalizedValue = value.trim().replace(/\s+/g, ' ');
+  const searchPath = useBasePath({ q: normalizedValue });
   let history = useHistory();
 
   // Change input value to match search term when browser navigation occurs
@@ -21,10 +23,10 @@ export function Search() {
   function handleSetSearchTerm(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
+    // Reset which movies were hidden for every new search
     setHiddenList([]);
 
-    const query = value.trim().replace(/\s+/g, ' ');
-    history.push(`/?q=${encodeURIComponent(query)}`);
+    history.push(searchPath);
   }
 
   return (

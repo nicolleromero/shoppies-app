@@ -17,10 +17,24 @@ export function useSelectedMovieId() {
   return movieId || '';
 }
 
-export function useHomepagePath() {
+export function useBasePath(params?: Record<string, string>) {
+  const location = useLocation();
   const searchTerm = useSearchTerm();
+  const searchParams = new URLSearchParams();
 
-  return searchTerm ? `/?q=${encodeURIComponent(searchTerm)}` : '/';
+  // Default to always including the search query
+  if (searchTerm) {
+    searchParams.set('q', searchTerm);
+  }
+
+  if (params) {
+    for (const key in params) {
+      searchParams.set(key, params[key]);
+    }
+  }
+
+  const queryString = searchParams.toString();
+  return location.pathname + (queryString ? `?${queryString}` : '');
 }
 
 // Credit to: https://www.joshwcomeau.com/react/animated-sparkles-in-react/

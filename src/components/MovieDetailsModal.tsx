@@ -6,7 +6,7 @@ import { useRecoilValue } from 'recoil';
 import { MAX_NOMINATIONS } from '../constants';
 import { omdbMovieDetails } from '../recoil/selectors';
 import { nominationListState } from '../recoil/atoms';
-import { useHomepagePath, useSelectedMovieId } from '../utils/hooks';
+import { useBasePath, useSelectedMovieId } from '../utils/hooks';
 import { DismissButton } from './DismissButton';
 import { ErrorBoundary } from './ErrorBoundary';
 import { NominateButton } from './NominateButton';
@@ -46,7 +46,7 @@ export function MovieDetailsModal() {
 function MovieDetailsModalContent(props: Props) {
   const { isOpen, movieId } = props;
   const history = useHistory();
-  const homepagePath = useHomepagePath();
+  const homepagePath = useBasePath();
   const movie = useRecoilValue(omdbMovieDetails(movieId));
   const nominationsList = useRecoilValue(nominationListState);
   const nominated = nominationsList.some((obj) => obj.id === movieId);

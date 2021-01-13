@@ -1,12 +1,12 @@
 import { useHistory } from 'react-router-dom';
 
-import { useHomepagePath } from '../utils/hooks';
+import { useBasePath } from '../utils/hooks';
 import { DeleteButton } from './DeleteButton';
 
 import './DismissButton.css';
 
 export function DismissButton() {
-  const path = useHomepagePath();
+  const path = useBasePath();
   const history = useHistory();
 
   function handleClick() {

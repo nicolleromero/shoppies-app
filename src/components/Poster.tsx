@@ -4,7 +4,7 @@ import { Flipped } from 'react-flip-toolkit';
 import { Link } from 'react-router-dom';
 import { useSpring, animated } from 'react-spring';
 
-import { useSearchTerm } from '../utils/hooks';
+import { useBasePath } from '../utils/hooks';
 import { Movie } from '../utils/omdb';
 
 import moviePoster from '../images/movie-poster.png';
@@ -43,7 +43,7 @@ export function Poster({
   movie,
   tooltip = false,
 }: Props) {
-  const searchTerm = useSearchTerm();
+  const linkPath = useBasePath({ movie: movie ? movie.id : '' });
 
   const [springProps, set] = useSpring<{ xys: XYS }>(() => ({
     xys: [0, 0, 1] as const,
@@ -61,11 +61,7 @@ export function Poster({
   return (
     <Flipped flipId={flipId || movie.id}>
       {clickable ? (
-        <Link
-          to={`/?q=${encodeURIComponent(searchTerm)}&movie=${encodeURIComponent(movie.id)}`}
-          className="poster"
-          data-tip={tip}
-        >
+        <Link to={linkPath} className="poster" data-tip={tip}>
           <animated.div
             className="poster-inner"
             onMouseMove={(event) =>
