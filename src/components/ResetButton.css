@@ -1,5 +1,6 @@
 .center-reset-button {
   display: flex;
+  flex-grow: 1;
   justify-content: center;
 }
 
@@ -19,11 +20,4 @@
   background: #8bca2f;
   color: #fff;
   cursor: pointer;
-}
-
-@media screen and (max-width: 600px) {
-  .reset-button {
-    position: absolute;
-    top: 175px;
-  }
 }
