@@ -1,28 +1,12 @@
 # <div align="center">✨ The Shoppies ✨<br/>Movie Awards for Entrepreneurs</div>
 
-# <div align="center"><img src="public/awards.svg" width="25%"></div>
+# <div align="center"><img src="../images/awards.svg" width="25%"></div>
 
 ## About
 
 > Shoppies is a single-page web app built in React that lets users search for movies using [OMDB'S API](https://www.omdbapi.com/) and nominate five movies to receive a Shoppie Award!</div>
 
 ---
-
-### <div align="center">Start of app</div>
-
-# <div align="center"><img src="public/demo_intro.gif" width="100%"></div>
-
----
-
-### <div align="center">Nominating movies</div>
-
-# <div align="center"><img src="public/demo_nominate.gif" width="100%"></div>
-
-### <div align="center">Nominations complete</div>
-
----
-
-# <div align="center"><img src="public/demo_final.gif" width="100%"></div>
 
 ## Contents
 
@@ -52,31 +36,29 @@
 
 ## <a name="app-features"></a>App Features
 
-- Users can search the OMDB database to find movies they want to nominate. 🍿
+- Users can search the OMDB database to find movies they want to nominate for a Shoppies Award! ✨
 - Movie posters are animated using [React Spring](https://github.com/pmndrs/react-spring) and [React Flip Toolkit](https://github.com/aholachek/react-flip-toolkit).
 - Infinite scroll loads additional movies as the user scrolls and is implemented with [React Intersection Observer](https://github.com/thebuilder/react-intersection-observer) and [React Content Loader](https://github.com/danilowoz/react-content-loader).
-- Movie details are provided in an accessible modal using [React Modal](https://github.com/reactjs/react-modal) and can be seen by clicking on a movie poster in the search results or the nominations footer.
-- A user's nominations are saved in local storage so results will persist even if they leave the page.
-- [Recoil](https://recoiljs.org/) is an experimental state management library for React that offers an orthogonal approach to managing state. Selectors are used to handle asynchronous data fetching using OMDB's API.
+- Movie details and ratings are provided in an accessible modal using [React Modal](https://github.com/reactjs/react-modal) and can be seen by clicking on a movie poster in the search results or the nominations footer.
+- A user's nominations are saved to local storage so results will persist even if they leave the page.
+- I chose to build with [Recoil](https://recoiljs.org/), an experimental state management library for React, because it offers an orthogonal approach to managing state. Selectors are used to handle asynchronous data fetching from OMDB's API.
+- The design of the app is responsive and can be viewed on desktop or mobile.
 - [Jest Testing Framework](https://jestjs.io/docs/en/tutorial-react) is used to test the end-to-end functioning of the app.
-- Semantic markup and aria labels are used to support broader accessibility (and tested in Lighthouse and Axe).
-- Select five movies to complete your nominations! 🎉
+- Semantic markup and aria labels are used to support accessibility (and tested in Lighthouse and Axe).
+- Users select five movies to complete their nominations! 🎉
 
 ## <a name="future-improvements"></a>Future Improvements
 
 - Refactor CSS to use Tailwind or a similar framework.
-- Add improvements for mobile.
 - Support users creating sharable links.
 
 ## <a name="about-me"></a>About The Developer
 
-Hi! 👋 I'm Nicolle, a graduate from Hackbright Academy’s software engineering program and currently a software engineer intern at PagerDuty. As part of the front-end growth team, I help build and maintain the front-end for customer onboarding, checkout, and growth trials. We work in React/Redux and Ruby/Rails (web monolith) with modern front-end CI/CU tools (docker, gulp, GitHub, Optimizely). Our team is focused on building streamlined customer-focused applications and constantly improving the end-user experience. I love logging in every day to collaborate with my team, tackle hard problems, learn new skills, and create UI that will be used by millions of people.
+Hi! 👋 I'm Nicolle, a graduate from Hackbright Academy’s Full-stack Software Engineering program and currently a Software Engineer Intern at PagerDuty. I'm part of the frontend growth team where I help build and maintain the frontend for customer onboarding, checkout, and free trial signup flows. For our tech stack, we work in React/Redux, Ruby/Rails, and Elixir/Phoenix with modern frontend CI/CD tools (CircleCI, Docker, GitHub, Optimizely, Segment). My team is focused on building a frictionless marketing, product, and customer experience with an emphasis on rapid iteration. I love logging in every day to collaborate with my team, tackle hard problems, learn new skills, and create UI that will be used by millions of people.
 
 ## <a name="deployment"></a>Deployment
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-<details><summary><b>Show instructions</b></summary>
 
 ### Available Scripts
 
@@ -131,9 +113,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/ad
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
-</details>
-
 ## <a name="license"></a>License
 
 - MIT © Nicolle Romero 2020
-- Homepage Photo by Katerina Limpitsouni (unDraw: https://undraw.co/illustrations)
+- Homepage Illustration by Katerina Limpitsouni (unDraw: https://undraw.co/illustrations)
