@@ -1,5 +1,6 @@
 import { memoize } from './memoize';
 
+// Only storing the API key on the frontend for this demo. I would normally store the key on the backend.
 const API_KEY = '7030d0e8';
 const SEARCH_URL = 'https://www.omdbapi.com';
 
