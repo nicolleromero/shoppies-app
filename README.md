@@ -4,7 +4,19 @@
 
 ## About
 
-> <b>Movie awards for entrepreneurs!</b> Shoppies is a single-page web app built in React that lets users search for movies using [OMDB'S API](https://www.omdbapi.com/) and nominate five movies to receive a Shoppie Award!
+Movie awards for entrepreneurs! Shoppies is a single-page web app built in React that lets users search for movies using OMDB'S API and nominate five movies to receive a Shoppies Award!
+
+#### <a href="https://nicolleromero.github.io/shoppies-app/">👉 Try it out here!</a>
+
+### <div align="center"><img alt="shoppies demo gif" src="/src/images/readme.gif" width="100%"></div>
+
+## Demo Video
+
+<a href="http://www.youtube.com/watch?v=FTJ1xsxiiIk">Watch a demo of the app in action!</a>
+
+### <div align="center"><a href="http://www.youtube.com/watch?v=FTJ1xsxiiIk"><img alt="shoppies demo video" src="/src/images/readme.png" width="100%"></a></div>
+
+<br />
 
 ## Contents
 
@@ -34,7 +46,7 @@
 
 ## <a name="app-features"></a>App Features
 
-- Users can search the OMDB database to find movies they want to nominate for a Shoppies Award! ✨
+- Users can search OMDB to find movies they want to nominate for a Shoppies Award! ✨
 - Movie posters are animated using [React Spring](https://github.com/pmndrs/react-spring) and [React Flip Toolkit](https://github.com/aholachek/react-flip-toolkit).
 - Infinite scroll loads additional movies as the user scrolls and is implemented with [React Intersection Observer](https://github.com/thebuilder/react-intersection-observer) and [React Content Loader](https://github.com/danilowoz/react-content-loader).
 - Movie details and ratings are provided in an accessible modal using [React Modal](https://github.com/reactjs/react-modal) and can be seen by clicking on a movie poster in the search results or the nominations footer.
@@ -49,11 +61,11 @@
 
 - Refactor CSS to use Tailwind or a similar framework.
 - Support users creating sharable links.
-- Add more robust testing
+- Add more robust testing.
 
 ## <a name="about-me"></a>About The Developer
 
-Hi! 👋 I'm Nicolle, a graduate from Hackbright Academy’s Full-stack Software Engineering program and currently a Software Engineer Intern at PagerDuty. I'm part of the frontend growth team where I help build and maintain the frontend for customer onboarding, checkout, and free trial signup flows. For our tech stack, we work in React/Redux, Ruby/Rails, and Elixir/Phoenix with modern frontend CI/CD tools (CircleCI, Docker, GitHub, Optimizely, Segment). My team is focused on building a frictionless marketing, product, and customer experience with an emphasis on rapid iteration. I love logging in every day to collaborate with my team, tackle hard problems, learn new skills, and create UI that will be used by millions of people.
+Hi! 👋 I'm Nicolle, a graduate from Hackbright Academy’s Full-stack Software Engineering program and currently a Software Engineer Intern at PagerDuty. I'm part of the Frontend Growth Engineering team where I help build and maintain the UI for customer onboarding, checkout, and free trial signup flows. We work in React/Redux, Ruby/Rails, and Elixir/Phoenix with modern frontend CI/CD tools. I love logging in each day to collaborate with my team, tackle hard problems, learn new skills, and create UI that will be used by millions of people.
 
 ## <a name="deployment"></a>Deployment
 
@@ -114,5 +126,5 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 ## <a name="license"></a>License
 
-- MIT © Nicolle Romero 2020
+- MIT © Nicolle Romero 2021
 - Homepage Illustration by Katerina Limpitsouni (unDraw: https://undraw.co/illustrations)
