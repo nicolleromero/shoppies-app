@@ -32,7 +32,7 @@ export function NominatedMovie(props: Props) {
     <div className="nominated-movie" data-testid={movieId}>
       {movie ? (
         <Poster movie={movie} tooltip={true}>
-          <DeleteButton movie={movie} onClick={handleUnnominateMovie} />
+          <DeleteButton onClick={handleUnnominateMovie} />
         </Poster>
       ) : (
         <Poster empty={true} />

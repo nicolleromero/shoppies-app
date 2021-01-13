@@ -16,24 +16,16 @@ export function NominationsList() {
     placeholders.push(<NominatedMovie key={i} />);
   }
 
-  if (list.length === 5) {
-    return (
-      <div className="nominations-list">
-        {list.map((movie) => {
-          return (
-            <Sparkles>
-              <NominatedMovie movie={movie} key={movie.id} />
-            </Sparkles>
-          );
-        })}
-      </div>
-    );
-  }
-
   return (
     <div className="nominations-list">
       {list.map((movie) => {
-        return <NominatedMovie movie={movie} key={movie.id} />;
+        return list.length === MAX_NOMINATIONS ? (
+          <Sparkles>
+            <NominatedMovie movie={movie} key={movie.id} />
+          </Sparkles>
+        ) : (
+          <NominatedMovie movie={movie} key={movie.id} />
+        );
       })}
       {placeholders}
     </div>
