@@ -1,16 +1,14 @@
-# <div align="center">✨ The Shoppies ✨<br/>Movie Awards for Entrepreneurs</div>
+### <div align="center"><img src="/src/images/title.png" width="70%"></div>
 
-# <div align="center"><img src="/images/src/awards.svg" width="25%"></div>
+### <div align="center">UX Developer Intern <br/>& Web Developer Intern Challenge</div>
 
 ## About
 
-> Shoppies is a single-page web app built in React that lets users search for movies using [OMDB'S API](https://www.omdbapi.com/) and nominate five movies to receive a Shoppie Award!</div>
-
----
+> <b>Movie awards for entrepreneurs!</b> Shoppies is a single-page web app built in React that lets users search for movies using [OMDB'S API](https://www.omdbapi.com/) and nominate five movies to receive a Shoppie Award!
 
 ## Contents
 
-- [Tech Stack](#tech-stack)
+- [Technologies](#tech-stack)
 - [App Features](#app-features)
 - [Future Improvements](#future-improvements)
 - [About The Developer](#about-me)
@@ -51,6 +49,7 @@
 
 - Refactor CSS to use Tailwind or a similar framework.
 - Support users creating sharable links.
+- Add more robust testing
 
 ## <a name="about-me"></a>About The Developer
 
