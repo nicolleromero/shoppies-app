@@ -4,7 +4,7 @@ export function GithubCorner() {
   return (
     // Source: https://tholman.com/github-corners/
     <a
-      href="https://github.com/nicolleromero/shoppies_app"
+      href="https://github.com/nicolleromero/shoppies-app"
       className="github-corner"
       aria-label="View source on GitHub"
     >

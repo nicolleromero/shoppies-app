@@ -33,6 +33,7 @@ export function Search() {
     <form className="search-field" onSubmit={handleSetSearchTerm}>
       <input
         type="text"
+        autoFocus
         placeholder="Enter the title of a movie"
         value={value}
         aria-label="search term input"

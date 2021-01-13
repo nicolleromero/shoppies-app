@@ -1,6 +1,6 @@
 # <div align="center">✨ The Shoppies ✨<br/>Movie Awards for Entrepreneurs</div>
 
-# <div align="center"><img src="../images/awards.svg" width="25%"></div>
+# <div align="center"><img src="/images/src/awards.svg" width="25%"></div>
 
 ## About
 
