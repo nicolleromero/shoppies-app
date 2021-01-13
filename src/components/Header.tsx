@@ -4,6 +4,8 @@ import { useSearchTerm } from '../utils/hooks';
 import { Search } from './Search';
 import { Sparkles } from './Sparkles';
 
+import awards from '../images/awards.svg';
+
 import './Header.css';
 
 export function Header() {
@@ -14,7 +16,7 @@ export function Header() {
       <div className="side-item">
         <Flipped flipId="awards">
           <Sparkles disabled={!!searchTerm}>
-            <img className="awards" alt="scene of awards ceremony" src="/awards.svg" />
+            <img className="awards" alt="scene of awards ceremony" src={awards} />
           </Sparkles>
         </Flipped>
         <Flipped flipId="title">
