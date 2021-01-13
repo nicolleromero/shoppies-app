@@ -14,6 +14,7 @@ type Props = {
   disabled?: boolean;
 };
 
+// Credit to: https://www.joshwcomeau.com/react/animated-sparkles-in-react/
 export function Sparkles({
   color = DEFAULT_COLOR,
   children,
