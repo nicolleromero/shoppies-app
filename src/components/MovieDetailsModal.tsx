@@ -102,11 +102,12 @@ function MovieDetailsModalContent(props: Props) {
         </div>
       </div>
 
-      <div className="column">
-        <DismissButton />
+      <div className="column center">
         <Poster clickable={false} movie={movie}></Poster>
         <NominateButton allowUnnominate={true} movie={movie} />
       </div>
+
+      <DismissButton />
     </ReactModal>
   );
 }

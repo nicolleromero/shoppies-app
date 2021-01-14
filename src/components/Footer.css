@@ -52,3 +52,9 @@
 .footer.complete::after {
   opacity: 1;
 }
+
+@media (max-width: 630px) {
+  .tooltip {
+    display: none !important;
+  }
+}

@@ -1,13 +1,13 @@
 .search-field {
   display: flex;
-  justify-content: center;
-  align-content: center;
+  align-items: center;
+  width: 100%;
+  min-width: 340px;
+  max-width: 380px;
 }
 
 .search-field input {
-  flex-grow: 1;
-  min-width: 340px;
-  max-width: 380px;
+  width: 100%;
   padding: 15px 80px 15px 40px;
   border-width: 1px;
   border-color: lightgrey;

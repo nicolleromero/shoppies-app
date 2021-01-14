@@ -22,3 +22,19 @@
 .movie:hover .nominate-button {
   opacity: 1;
 }
+
+@media (max-width: 630px) {
+  .movie {
+    margin: 8px;
+  }
+
+  .movie .movie-title {
+    margin-top: 12px;
+    width: 140px;
+    font-size: 14px;
+  }
+
+  .movie .nominate-button {
+    width: 105px;
+  }
+}

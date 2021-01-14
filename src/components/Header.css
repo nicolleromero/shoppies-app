@@ -30,7 +30,11 @@
 }
 
 .search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-grow: 1;
+  margin: 0 10px;
 }
 
 /* "shift" denotes classes for repositioning after initial search */
@@ -52,7 +56,7 @@
   font-size: 24px;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 630px) {
   .center-children-shift .awards {
     margin: 10px;
     text-align: center;
@@ -61,7 +65,7 @@
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 630px) {
   .center-children-shift {
     flex-wrap: wrap;
     justify-content: center;

@@ -45,3 +45,10 @@
   height: 150px;
   width: 96px;
 }
+
+@media (max-width: 630px) {
+  .poster {
+    width: 115px;
+    height: 180px;
+  }
+}

@@ -32,6 +32,7 @@
   position: relative;
   max-width: 800px;
   max-height: 100%;
+  margin: 20px;
   padding: 15px;
   outline: none;
 }
@@ -52,21 +53,14 @@
   transform: scale(0.75);
 }
 
-@media screen and (max-width: 600px) {
-  .modal {
-    flex-direction: column;
-    align-items: center;
-    overflow: auto;
-  }
-
-  .modal .dismiss-button {
-    display: none;
-  }
+.modal .column {
+  padding: 0 10px;
 }
 
-.modal .column {
-  justify-content: center;
-  padding: 0 10px;
+.modal .column.center {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .modal .nominate-button {
@@ -107,4 +101,22 @@
   color: black;
   font-weight: normal;
   margin-top: 10px;
+}
+
+@media screen and (max-width: 630px) {
+  .modal {
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    overflow: auto;
+  }
+
+  .modal .dismiss-button {
+    top: 6px;
+    left: 6px;
+  }
+
+  .modal .column {
+    padding: 0;
+  }
 }

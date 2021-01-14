@@ -32,7 +32,13 @@ export function Footer() {
       {list.length > 0 && (
         // Only render tooltip once nominated movies are present so styles are injected
         // at the right time.
-        <ReactTooltip place="top" type="dark" effect="solid" aria-haspopup="true" />
+        <ReactTooltip
+          className="tooltip"
+          place="top"
+          type="dark"
+          effect="solid"
+          aria-haspopup="true"
+        />
       )}
     </>
   );
