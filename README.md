@@ -8,13 +8,13 @@ Movie awards for entrepreneurs! Shoppies is a single-page web app built in React
 
 #### <a href="https://nicolleromero.github.io/shoppies-app/">👉 Try it out here!</a>
 
-### <div align="center"><img alt="shoppies demo gif" src="/src/images/readme.gif" width="100%"></div>
+### <div align="center"><img alt="shoppies demo gif" src="readme.gif" width="100%"></div>
 
 ## Demo Video
 
 <a href="http://www.youtube.com/watch?v=FTJ1xsxiiIk">Watch a demo of the app in action!</a>
 
-### <div align="center"><a href="http://www.youtube.com/watch?v=FTJ1xsxiiIk"><img alt="shoppies demo video" src="/src/images/readme.png" width="100%"></a></div>
+### <div align="center"><a href="http://www.youtube.com/watch?v=FTJ1xsxiiIk"><img alt="shoppies demo video" src="readme.png" width="100%"></a></div>
 
 <br />
 
