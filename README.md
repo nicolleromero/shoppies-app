@@ -4,9 +4,9 @@
 
 ## About
 
-Movie awards for entrepreneurs! Shoppies is a single-page web app built in React that lets users search for movies using OMDB'S API and nominate five movies to receive a Shoppies Award!
+The movie awards for entrepreneurs! Shoppies is a single-page web app built in React that lets users search for movies (using OMDB's API) and nominate five movies to receive a Shoppies Award!
 
-#### <a href="https://nicolleromero.github.io/shoppies-app/">👉 Try it out here!</a>
+#### 👉 <a href="https://nicolleromero.github.io/shoppies-app/">Try it out here!</a>
 
 ### <div align="center"><img alt="shoppies demo gif" src="readme.gif" width="100%"></div>
 
@@ -14,7 +14,7 @@ Movie awards for entrepreneurs! Shoppies is a single-page web app built in React
 
 <a href="http://www.youtube.com/watch?v=FTJ1xsxiiIk">Watch a demo of the app in action!</a>
 
-### <div align="center"><a href="http://www.youtube.com/watch?v=FTJ1xsxiiIk"><img alt="shoppies demo video" src="readme.png" width="100%"></a></div>
+### <div align="center"><a href="https://youtu.be/qAtjI_D9lBc"><img alt="shoppies demo video" src="readme.png" width="100%"></a></div>
 
 <br />
 
@@ -61,6 +61,7 @@ Movie awards for entrepreneurs! Shoppies is a single-page web app built in React
 
 - Refactor CSS to use Tailwind or a similar framework.
 - Support users creating sharable links.
+- Add autocomplete to the search input.
 - Add more robust testing.
 
 ## <a name="about-me"></a>About The Developer
