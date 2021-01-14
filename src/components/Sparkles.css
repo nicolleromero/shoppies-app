@@ -1,4 +1,21 @@
-@keyframes comeInOut {
+.sparkle-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.sparkle-svg-wrapper {
+  position: absolute;
+  display: block;
+  animation: scale-in-out 1s forwards;
+  pointer-events: none;
+}
+
+.sparkle-svg {
+  display: block;
+  animation: spin 1s linear;
+}
+
+@keyframes scale-in-out {
   0% {
     transform: scale(0);
   }
@@ -17,20 +34,4 @@
   100% {
     transform: rotate(180deg);
   }
-}
-
-.sparkle-wrapper {
-  display: inline-block;
-  position: relative;
-}
-
-.sparkle-svg-wrapper {
-  position: absolute;
-  display: block;
-  animation: comeInOut 1s forwards;
-}
-
-.sparkle-svg {
-  display: block;
-  animation: spin 1s linear;
 }
