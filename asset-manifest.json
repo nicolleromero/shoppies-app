@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/shoppies-app/static/css/main.f282cf5c.chunk.css",
-    "main.js": "/shoppies-app/static/js/main.a37de4d3.chunk.js",
-    "main.js.map": "/shoppies-app/static/js/main.a37de4d3.chunk.js.map",
+    "main.css": "/shoppies-app/static/css/main.e57842e1.chunk.css",
+    "main.js": "/shoppies-app/static/js/main.32c72d01.chunk.js",
+    "main.js.map": "/shoppies-app/static/js/main.32c72d01.chunk.js.map",
     "runtime-main.js": "/shoppies-app/static/js/runtime-main.2e64bc9d.js",
     "runtime-main.js.map": "/shoppies-app/static/js/runtime-main.2e64bc9d.js.map",
     "static/js/2.8a85e05f.chunk.js": "/shoppies-app/static/js/2.8a85e05f.chunk.js",
     "static/js/2.8a85e05f.chunk.js.map": "/shoppies-app/static/js/2.8a85e05f.chunk.js.map",
     "index.html": "/shoppies-app/index.html",
-    "static/css/main.f282cf5c.chunk.css.map": "/shoppies-app/static/css/main.f282cf5c.chunk.css.map",
+    "static/css/main.e57842e1.chunk.css.map": "/shoppies-app/static/css/main.e57842e1.chunk.css.map",
     "static/js/2.8a85e05f.chunk.js.LICENSE.txt": "/shoppies-app/static/js/2.8a85e05f.chunk.js.LICENSE.txt",
     "static/media/awards.87a30b8c.svg": "/shoppies-app/static/media/awards.87a30b8c.svg",
     "static/media/movie-poster.26c42fab.png": "/shoppies-app/static/media/movie-poster.26c42fab.png",
@@ -19,7 +19,7 @@
   "entrypoints": [
     "static/js/runtime-main.2e64bc9d.js",
     "static/js/2.8a85e05f.chunk.js",
-    "static/css/main.f282cf5c.chunk.css",
-    "static/js/main.a37de4d3.chunk.js"
+    "static/css/main.e57842e1.chunk.css",
+    "static/js/main.32c72d01.chunk.js"
   ]
 }
