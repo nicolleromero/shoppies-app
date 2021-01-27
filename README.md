@@ -1,7 +1,5 @@
 ### <div align="center"><img src="/src/images/title.png" width="70%"></div>
 
-### <div align="center">UX Developer Intern <br/>& Web Developer Intern Challenge</div>
-
 ## About
 
 The movie awards for entrepreneurs! Shoppies is a single-page web app built in React that lets users search for movies (using OMDB's API) and nominate five movies to receive a Shoppies Award!
