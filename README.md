@@ -64,7 +64,7 @@ The movie awards for entrepreneurs! Shoppies is a single-page web app built in R
 
 ## <a name="about-me"></a>About The Developer
 
-Hi! 👋 I'm Nicolle, a graduate from Hackbright Academy’s Full-stack Software Engineering program and currently a Software Engineer Intern at PagerDuty. I'm part of the Frontend Growth Engineering team where I help build and maintain the UI for customer onboarding, checkout, and free trial signup flows. We work in React/Redux, Ruby/Rails, and Elixir/Phoenix with modern frontend CI/CD tools. I love logging in each day to collaborate with my team, tackle hard problems, learn new skills, and create UI that will be used by millions of people.
+Hi! 👋 I'm Nicolle, a graduate from Hackbright Academy’s Full-stack Software Engineering program and currently a Frontend Software Engineer at Shopify. I'm part of the Activation team where I help build and maintain the UI in React for customer onboarding, checkout, and free trial signup flows. 
 
 ## <a name="deployment"></a>Deployment
 
