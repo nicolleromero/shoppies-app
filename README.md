@@ -64,7 +64,7 @@ The movie awards for entrepreneurs! Shoppies is a single-page web app built in R
 
 ## <a name="about-me"></a>About The Developer
 
-Hi! 👋 I'm Nicolle, a graduate from Hackbright Academy’s Full-stack Software Engineering program and currently a Frontend Software Engineer at Shopify. I'm part of the Activation team where I help build and maintain the UI in React for customer onboarding, checkout, and free trial signup flows. 
+Hi! 👋 I'm Nicolle, currently a Frontend Software Engineer at Shopify. I'm part of the Activation team where I help build and maintain the UI in React for customer onboarding, checkout, and free trial signup flows. 
 
 ## <a name="deployment"></a>Deployment
 
