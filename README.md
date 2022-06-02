@@ -1,8 +1,6 @@
-### <div align="center"><img src="/src/images/title.png" width="70%"></div>
-
 ## About
 
-The movie awards for entrepreneurs! Shoppies is a single-page web app built in React that lets users search for movies (using OMDB's API) and nominate five movies to receive a Shoppies Award!
+A single-page web app built in React that lets users search for movies (using OMDB's API) and nominate five movies.
 
 #### 👉 <a href="https://nicolleromero.github.io/shoppies-app/">Try it out here!</a>
 
@@ -44,7 +42,7 @@ The movie awards for entrepreneurs! Shoppies is a single-page web app built in R
 
 ## <a name="app-features"></a>App Features
 
-- Users can search OMDB to find movies they want to nominate for a Shoppies Award! ✨
+- Users can search OMDB to find movies they want to nominate. ✨
 - Movie posters are animated using [React Spring](https://github.com/pmndrs/react-spring) and [React Flip Toolkit](https://github.com/aholachek/react-flip-toolkit).
 - Infinite scroll loads additional movies as the user scrolls and is implemented with [React Intersection Observer](https://github.com/thebuilder/react-intersection-observer) and [React Content Loader](https://github.com/danilowoz/react-content-loader).
 - Movie details and ratings are provided in an accessible modal using [React Modal](https://github.com/reactjs/react-modal) and can be seen by clicking on a movie poster in the search results or the nominations footer.
@@ -64,7 +62,7 @@ The movie awards for entrepreneurs! Shoppies is a single-page web app built in R
 
 ## <a name="about-me"></a>About The Developer
 
-Hi! 👋 I'm Nicolle, currently a Frontend Software Engineer at Shopify. I'm part of the Activation team where I help build and maintain the UI in React for customer onboarding, checkout, and free trial signup flows. 
+Hi! 👋 I'm Nicolle, a Software Engineer at GitHub. 
 
 ## <a name="deployment"></a>Deployment
 
