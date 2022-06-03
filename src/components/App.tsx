@@ -1,4 +1,5 @@
 import React from 'react';
+import { useRecoilValue } from 'recoil';
 
 import { FlipRoot } from './FlipRoot';
 import { Footer } from './Footer';
@@ -7,7 +8,11 @@ import { MovieDetailsModal } from './MovieDetailsModal';
 import { GithubCorner } from './GithubCorner';
 import { MovieList } from './MovieList';
 
+import { nominationState } from '../recoil/atoms';
+
 export default function App() {
+  const nominationAllowed = useRecoilValue(nominationState);
+
   return (
     <FlipRoot>
       <GithubCorner />
@@ -16,7 +21,7 @@ export default function App() {
         <MovieList />
       </div>
 
-      <Footer />
+      {nominationAllowed && <Footer />}
 
       <MovieDetailsModal />
     </FlipRoot>

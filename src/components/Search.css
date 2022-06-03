@@ -23,7 +23,7 @@
   max-height: 55px;
   margin-left: -75px;
   border: none;
-  background: #008060;
+  background: #494948;
   color: #fff;
   border-radius: 3px;
   padding: 12px;
@@ -31,7 +31,7 @@
 }
 
 .button-submit:hover {
-  background: #8bca2f;
+  background: #2c2c2c;
   color: #fff;
   cursor: pointer;
 }

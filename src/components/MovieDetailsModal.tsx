@@ -14,6 +14,8 @@ import { Poster } from './Poster';
 import { Ratings } from './Ratings';
 import { Ribbon } from './Ribbon';
 
+import { nominationState } from '../recoil/atoms';
+
 import './MovieDetailsModal.css';
 
 type Props = {
@@ -47,6 +49,7 @@ function MovieDetailsModalContent(props: Props) {
   const { isOpen, movieId } = props;
   const history = useHistory();
   const homepagePath = useBasePath();
+  const nominationAllowed = useRecoilValue(nominationState);
   const movie = useRecoilValue(omdbMovieDetails(movieId));
   const nominationsList = useRecoilValue(nominationListState);
   const nominated = nominationsList.some((obj) => obj.id === movieId);
@@ -104,7 +107,7 @@ function MovieDetailsModalContent(props: Props) {
 
       <div className="column center">
         <Poster clickable={false} movie={movie}></Poster>
-        <NominateButton allowUnnominate={true} movie={movie} />
+        {nominationAllowed && <NominateButton allowUnnominate={true} movie={movie} />}
       </div>
 
       <DismissButton />

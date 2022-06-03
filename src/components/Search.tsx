@@ -1,6 +1,7 @@
 import React, { useLayoutEffect, useState } from 'react';
 import { useSetRecoilState } from 'recoil';
 import { useHistory } from 'react-router-dom';
+import { nominationState } from '../recoil/atoms';
 
 import { hiddenListState } from '../recoil/atoms';
 import { useBasePath, useSearchTerm } from '../utils/hooks';
@@ -9,6 +10,7 @@ import './Search.css';
 
 export function Search() {
   const setHiddenList = useSetRecoilState(hiddenListState);
+  const setNominationsAllowed = useSetRecoilState(nominationState);
   const searchTerm = useSearchTerm();
   const [value, setValue] = useState(searchTerm);
   const normalizedValue = value.trim().replace(/\s+/g, ' ');
@@ -25,6 +27,12 @@ export function Search() {
 
     // Reset which movies were hidden for every new search
     setHiddenList([]);
+
+    if (normalizedValue === 'Nominate') {
+      setNominationsAllowed(true);
+    } else if (normalizedValue === 'Nominate Off') {
+      setNominationsAllowed(false);
+    }
 
     history.push(searchPath);
   }

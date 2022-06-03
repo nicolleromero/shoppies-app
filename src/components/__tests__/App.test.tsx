@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { RecoilRoot } from 'recoil';
-import { act, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import userEvent from '@testing-library/user-event';
 
@@ -26,14 +26,14 @@ function sleep(time: number) {
 // testing for title
 test('renders title', () => {
   render(<App />, { wrapper: Wrapper });
-  const elements = screen.getAllByText(/the shoppies/i);
+  const elements = screen.getAllByText(/Movie db/i);
   expect(elements.length > 0).toBeTruthy();
 });
 
 // testing for footer on load
 test('renders footer', () => {
   render(<App />, { wrapper: Wrapper });
-  const elements = screen.getAllByText(/you'd like to nominate to/i);
+  const elements = screen.getAllByText(/awesome/i);
   expect(elements.length > 0).toBeTruthy();
 });
 

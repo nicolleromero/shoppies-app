@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useSetRecoilState } from 'recoil';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
 import ContentLoader from 'react-content-loader';
 import { useInView } from 'react-intersection-observer';
 
@@ -8,7 +8,7 @@ import { DeleteButton } from './DeleteButton';
 import { NominateButton } from './NominateButton';
 import { Poster } from './Poster';
 
-import { hiddenListState } from '../recoil/atoms';
+import { hiddenListState, nominationState } from '../recoil/atoms';
 
 import './MovieCard.css';
 
@@ -19,6 +19,7 @@ type Props = {
 
 export function MovieCard(props: Props) {
   const { movie, onIntersect } = props;
+  const nominationAllowed = useRecoilValue(nominationState);
   const setHiddenList = useSetRecoilState(hiddenListState);
   const { ref, inView } = useInView();
 
@@ -49,7 +50,7 @@ export function MovieCard(props: Props) {
     <div className="movie" role="listitem" data-testid={movie.title} ref={ref}>
       <Poster movie={movie}>
         <DeleteButton onClick={handleHideMovie} />
-        <NominateButton movie={movie} />
+        {nominationAllowed && <NominateButton movie={movie} />}
       </Poster>
       <div className="movie-title">
         {movie.title} ({movie.year})
