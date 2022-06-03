@@ -4,7 +4,7 @@ import { useSearchTerm } from '../utils/hooks';
 import { Search } from './Search';
 import { Sparkles } from './Sparkles';
 
-import awards from '../images/awards.svg';
+import countdown from '../images/countdown.gif';
 
 import './Header.css';
 
@@ -15,12 +15,12 @@ export function Header() {
     <div className={`header ${searchTerm ? 'center-children-shift' : 'center-children'}`}>
       <div className="side-item">
         <Flipped flipId="awards">
-          <Sparkles disabled={!!searchTerm}>
-            <img className="awards" alt="scene of awards ceremony" src={awards} />
-          </Sparkles>
+          <img className="rounded" alt="countdown" src={countdown} />
         </Flipped>
         <Flipped flipId="title">
-          <h1 className="title">the shoppies</h1>
+          <Sparkles disabled={!!searchTerm}>
+            <h1 className="title">Movie db</h1>
+          </Sparkles>
         </Flipped>
       </div>
       <Flipped flipId="search-input">
