@@ -20,7 +20,7 @@ export function NominationsList() {
     <div className="nominations-list">
       {list.map((movie) => {
         return list.length === MAX_NOMINATIONS ? (
-          <Sparkles>
+          <Sparkles key={movie.id}>
             <NominatedMovie movie={movie} key={movie.id} />
           </Sparkles>
         ) : (

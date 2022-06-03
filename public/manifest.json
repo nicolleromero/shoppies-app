@@ -1,6 +1,6 @@
 {
-  "short_name": "Shoppies App",
-  "name": "Shoppies App",
+  "short_name": "Movie db",
+  "name": "Movie db",
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",

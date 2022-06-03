@@ -1,6 +1,6 @@
 {
-  "homepage": "https://nicolleromero.github.io/shoppies-app",
-  "name": "shoppies-app",
+  "homepage": "https://moviedb.app",
+  "name": "movie-db",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

@@ -1,16 +1,10 @@
+# <div align="center"><p>🎬 Movie db </p></div>
+
 ## About
 
-A single-page web app built in React that lets users search for movies (using OMDB's API) and nominate five movies.
+Movie db is a single-page web app built in React that lets users search for movies (using OMDB's API).
 
-#### 👉 <a href="https://nicolleromero.github.io/shoppies-app/">Try it out here!</a>
-
-### <div align="center"><img alt="shoppies demo gif" src="readme.gif" width="100%"></div>
-
-## Demo Video
-
-<a href="http://www.youtube.com/watch?v=FTJ1xsxiiIk">Watch a demo of the app in action!</a>
-
-### <div align="center"><a href="https://youtu.be/qAtjI_D9lBc"><img alt="shoppies demo video" src="readme.png" width="100%"></a></div>
+#### 👉 <a href="https://moviedb.app/">Try it out here!</a>
 
 <br />
 
@@ -42,27 +36,18 @@ A single-page web app built in React that lets users search for movies (using OM
 
 ## <a name="app-features"></a>App Features
 
-- Users can search OMDB to find movies they want to nominate. ✨
+- Users can search OMDB for details about movies. ✨
 - Movie posters are animated using [React Spring](https://github.com/pmndrs/react-spring) and [React Flip Toolkit](https://github.com/aholachek/react-flip-toolkit).
 - Infinite scroll loads additional movies as the user scrolls and is implemented with [React Intersection Observer](https://github.com/thebuilder/react-intersection-observer) and [React Content Loader](https://github.com/danilowoz/react-content-loader).
 - Movie details and ratings are provided in an accessible modal using [React Modal](https://github.com/reactjs/react-modal) and can be seen by clicking on a movie poster in the search results or the nominations footer.
-- A user's nominations are saved to local storage so results will persist even if they leave the page.
 - I chose to build with [Recoil](https://recoiljs.org/), an experimental state management library for React, because it offers an orthogonal approach to managing state. Selectors are used to handle asynchronous data fetching from OMDB's API.
 - The design of the app is responsive and can be viewed on desktop or mobile.
 - [Jest Testing Framework](https://jestjs.io/docs/en/tutorial-react) is used to test the end-to-end functioning of the app.
 - Semantic markup and aria labels are used to support accessibility (and tested in Lighthouse and Axe).
-- Users select five movies to complete their nominations! 🎉
-
-## <a name="future-improvements"></a>Future Improvements
-
-- Refactor CSS to use Tailwind or a similar framework.
-- Support users creating sharable links.
-- Add autocomplete to the search input.
-- Add more robust testing.
 
 ## <a name="about-me"></a>About The Developer
 
-Hi! 👋 I'm Nicolle, a Software Engineer at GitHub. 
+Hi! 👋 I'm Nicolle, a Software Engineer at GitHub that loves to create awesome UI.
 
 ## <a name="deployment"></a>Deployment
 
@@ -124,4 +109,3 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ## <a name="license"></a>License
 
 - MIT © Nicolle Romero 2021
-- Homepage Illustration by Katerina Limpitsouni (unDraw: https://undraw.co/illustrations)

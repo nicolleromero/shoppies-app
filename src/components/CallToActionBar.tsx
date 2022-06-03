@@ -11,9 +11,8 @@ export function CallToActionBar() {
       <img className="statue" src={statueIcon} alt="awards statue" />
       <Sparkles>
         <p className="text">
-          Welcome to the home of the Shoppies! Select{' '}
-          <span className="number">{MAX_NOMINATIONS}</span> movies you'd like to nominate to receive
-          a Shoppies award!
+          Welcome to Movie db! Select <span className="number">{MAX_NOMINATIONS}</span> movies that
+          you think are awesome!
         </p>
       </Sparkles>
     </div>

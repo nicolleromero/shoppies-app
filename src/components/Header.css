@@ -9,18 +9,29 @@
 .header .title {
   text-align: center;
   margin: 20px 0;
-  color: #004c3f;
+  color: black;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial,
     sans-serif;
   font-style: italic;
   font-size: 62px;
 }
 
+img.rounded {
+  object-fit: cover;
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  margin-top: 100px;
+}
+
 .awards {
-  margin-top: 30px;
+  border: 1px solid black;
+  border-radius: 100px;
+  margin-top: 80px;
   text-align: center;
   margin-bottom: 20px;
-  width: 180px;
+  width: 240px;
+  opacity: 0.8;
 }
 
 .side-item {
@@ -49,7 +60,6 @@
 .center-children-shift .side-item {
   flex-direction: row;
   flex-shrink: 1;
-  width: 300px;
 }
 
 .center-children-shift .title {
@@ -57,11 +67,10 @@
 }
 
 @media screen and (min-width: 630px) {
-  .center-children-shift .awards {
+  .center-children-shift .rounded {
     margin: 10px;
-    text-align: center;
-    opacity: 0.6;
-    width: 90px;
+    width: 0px;
+    height: 0px;
   }
 }
 
@@ -81,14 +90,16 @@
 
   .center-children-shift .title {
     font-size: 32px;
-    margin-left: 15px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .awards {
     width: 150px;
   }
 
-  .center-children-shift .awards {
-    width: 50px;
+  .center-children-shift .rounded {
+    width: 0px;
+    height: 0px;
   }
 }
